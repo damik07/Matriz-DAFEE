@@ -13,9 +13,7 @@ export class MenuNacComponent implements OnInit {
 
   constructor(private router:Router, private sidebarService:SidebarService) {
     this.menuItems = this.sidebarService.menu;
-    console.log(this.menuItems);
-
-    
+        
   }
   ngOnInit() {
   }

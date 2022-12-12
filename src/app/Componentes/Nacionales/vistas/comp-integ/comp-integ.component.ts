@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IntegracionService } from '../../../../Servicios/integracion.service';
 
 @Component({
   selector: 'app-comp-integ',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompIntegComponent implements OnInit {
 
-  constructor() { }
+  dataInteg?:any[];
+
+  constructor(private router:Router, private intService:IntegracionService) {
+    this.dataInteg = this.intService.integracion;
+    }
 
   ngOnInit() {
   }
