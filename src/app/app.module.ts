@@ -8,10 +8,11 @@ import { HelloComponent } from './hello.component';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { MenuNacComponent } from './Componentes/Nacionales/menu-nac/menu-nac.component';
+import { CompIntegComponent } from './Componentes/Nacionales/vistas/comp-integ/comp-integ.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
