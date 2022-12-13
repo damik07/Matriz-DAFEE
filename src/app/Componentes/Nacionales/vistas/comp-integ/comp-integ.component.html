@@ -1,18 +1,56 @@
 <form>
   <div class="row">
-    <div class="col-4">
+    <div class="col-1">
+      <p>Columna 1</p>
+    </div>
+    <div class="col-2">
       <label for="filtro1" class="form-label">Fecha inicio</label>
       <input class="form-control" type="date" id="filtro1" placeholder="Default input" aria-label="default input example">
 
     </div>
-    <div class="col-4">
+    <div class="col-2">
 
       <label for="filtro1" class="form-label">Fecha fin</label>
       <input class="form-control" type="date" id="filtro1" placeholder="Default input" aria-label="default input example">
     </div>
-    <div class="col-4">
+    
+  </div>
+
+  <div class="row">
+    <div class="col-1">
+      <p>Columna 2</p>
+    </div>
+    <div class="col-2">
+      <label for="filtro1" class="form-label">Fecha inicio</label>
+      <input class="form-control" type="date" id="filtro2" placeholder="Default input" aria-label="default input example">
+
+    </div>
+    <div class="col-2">
+
+      <label for="filtro1" class="form-label">Fecha fin</label>
+      <input class="form-control" type="date" id="filtro2" placeholder="Default input" aria-label="default input example">
+    </div>
+    <div class="col-2">
       <button type="submit" class="btn btn-primary mb-3">Filtrar</button>
     </div>
   </div>
 </form>
+<hr>
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Rango de fechas 1</th>
+    <th>Importe</th>
+    <th>Rango de fechas 2</th>
+    <th>Importe</th>
+  </tr>
+  <tr>
+    <td><!--{{ filtro1 }}--></td>
+    <td><!--{{ dataInteg | filterByDateRange:filtro1 | sumByProperty:'importe' }}--></td>
+    <td><!--{{ filtro2 }}--></td>
+    <td><!--{{ dataInteg | filterByDateRange:filtro2 | sumByProperty:'importe' }}--></td>
+  </tr>
+</table>
+
+
   
