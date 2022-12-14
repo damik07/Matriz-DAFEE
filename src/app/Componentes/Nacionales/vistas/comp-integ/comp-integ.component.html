@@ -1,22 +1,24 @@
-<form>
+<form (ngSubmit)="filterData1(f.value)" #f="ngForm" >
+  <div>
   <div class="row">
     <div class="col-1">
       <p>Columna 1</p>
     </div>
     <div class="col-2">
       <label for="startDate1" class="form-label">Fecha inicio</label>
-      <input class="form-control" type="date"  id="startDate1">
+      <input class="form-control" type="date" name="startDate1" id="startDate1" ngModel>
 
     </div>
     <div class="col-2">
 
       <label for="endDate1" class="form-label">Fecha fin</label>
-      <input class="form-control" type="date"  id="endDate1">
+      <input class="form-control" type="date" name="endDate1" id="endDate1" ngModel>
     </div>
     
   </div>
 
   <div class="row">
+    <!--
     <div class="col-1">
       <p>Columna 2</p>
     </div>
@@ -30,10 +32,12 @@
       <label for="endDate2" class="form-label">Fecha fin</label>
       <input class="form-control" type="date"  id="endDate2">
     </div>
+  -->
     <div class="col-2">
-      <button type="button" class="btn btn-primary mb-3">Filtrar</button>
+      <button type="submit"  class="btn btn-primary mb-3">Filtrar</button>
     </div>
   </div>
+</div>
 </form>
 <hr>
 

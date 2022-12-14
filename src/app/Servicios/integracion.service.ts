@@ -5,25 +5,25 @@ import { Injectable } from '@angular/core';
 export class IntegracionService {
 
   integracion?:any=[{
-    "fecha": "01/10/2022",
+    "fecha": "2022-10-01",
     "codigo": "01",
     "descripcion": "IVA",
     "importe": "150"
   },
   {
-    "fecha": "01/10/2022",
+    "fecha": "2022-10-01",
     "codigo": "02",
     "descripcion": "Ganancias",
     "importe": "350"
   },
   {
-    "fecha": "01/11/2022",
+    "fecha": "2022-11-01",
     "codigo": "01",
     "descripcion": "IVA",
     "importe": "450"
   },
   {
-    "fecha": "01/12/2022",
+    "fecha": "2022-12-01",
     "codigo": "01",
     "descripcion": "IVA",
     "importe": "550"

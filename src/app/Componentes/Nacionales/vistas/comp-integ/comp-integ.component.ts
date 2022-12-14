@@ -11,7 +11,7 @@ export class CompIntegComponent implements OnInit {
 
   dataInteg?:any[];
   datosFiltrados?:any[];
-  filtroFechas:Date;
+  
   
 
   constructor(private router:Router, private intService:IntegracionService) {
@@ -19,14 +19,13 @@ export class CompIntegComponent implements OnInit {
     }
 
   ngOnInit() {
-
-    
+        
   }
 
-  filterData1(){     
-    console.log(this.filterData1)
+  filterData1(formData){           
     // Filtrar los datos del servicio según el rango de fechas especificado en el formulario
-  this.datosFiltrados = this.dataInteg.filter(dato => dato.fecha >= this.filterData1.arguments && dato.fecha <= this.filterData1.arguments);  
+    this.datosFiltrados = this.dataInteg.filter(dato => dato.fecha >= formData.startDate1 && dato.fecha <= formData.endDate1);
+    
   }
 
 }
