@@ -47,9 +47,7 @@ export class CompIntegComponent implements OnInit {
     
   }
 
-  filtroByFiltros(filtro:any){
-    return this.item.filtro === filtro
-  }
+  //filtroByFiltros(filtro:any){    return this.datosFiltrados.filter(d => d.filtro === filtro);  }
 
 
 }
