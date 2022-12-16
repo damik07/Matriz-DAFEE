@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FiltroRangoFechaPipe implements PipeTransform {
 
-  transform(items: any[], field: any, value1: Date, value2: Date): any [] {
+  transform(items: any[], field: any, value1: any, value2: any): any [] {
     if (!items) {
       return [];
     }
