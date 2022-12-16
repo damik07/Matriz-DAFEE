@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FiltroRangoFechaPipe implements PipeTransform {
 
-  transform(items: any[], field: string, value1: any, value2: any): any [] {
+  transform(items: any[], field: any, value1: Date, value2: Date): any [] {
     if (!items) {
       return [];
     }
@@ -15,11 +15,12 @@ export class FiltroRangoFechaPipe implements PipeTransform {
 
     return items.filter(singleItem =>
       singleItem[field].some(dato => {
-        let fechaDato = new Date(dato.fecha);
+        let fechaDato = new Date(dato);
         //let hoy = new Date();
         //let diferencia = Math.abs(hoy.getTime() - fechaDato.getTime());
         //let diasDiferencia = Math.ceil(diferencia / (1000 * 3600 * 24));
         return fechaDato >= value1 && fechaDato <= value2;
+        
       })
     );
   }

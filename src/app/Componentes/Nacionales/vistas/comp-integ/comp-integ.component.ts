@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IntegracionService } from '../../../../Servicios/integracion.service';
-import { groupBy } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-comp-integ',
   templateUrl: './comp-integ.component.html',
-  styleUrls: ['./comp-integ.component.css']
+  styleUrls: ['./comp-integ.component.css'],
+  
 })
 
 export class CompIntegComponent implements OnInit {
