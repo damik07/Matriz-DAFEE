@@ -45,6 +45,7 @@ export class CompIntegComponent implements OnInit {
 
       this.datosFiltrados = datosFiltrados1.concat(datosFiltrados2);
       console.log(this.datosFiltrados);
+      console.log(this.dataInteg);
     
   }
 

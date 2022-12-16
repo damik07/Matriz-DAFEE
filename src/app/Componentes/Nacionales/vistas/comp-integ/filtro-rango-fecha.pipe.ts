@@ -15,7 +15,7 @@ export class FiltroRangoFechaPipe implements PipeTransform {
 
     return items.filter(singleItem =>
       singleItem[field].some(dato => {
-        let fechaDato = new Date(dato);
+        let fechaDato = new Date(dato.fecha);
         //let hoy = new Date();
         //let diferencia = Math.abs(hoy.getTime() - fechaDato.getTime());
         //let diasDiferencia = Math.ceil(diferencia / (1000 * 3600 * 24));
