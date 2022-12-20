@@ -14,6 +14,8 @@ export class SumByConceptoPipe implements PipeTransform {
     }
 
     // Calcula la suma de los valores de la propiedad especificada del array
-    return items.reduce((sum, item) => sum + item[property], 0);
+    return Array.isArray(items)
+      ? items.reduce((sum, item) => sum + item[property], 0)
+      : 0;
   }
 }
