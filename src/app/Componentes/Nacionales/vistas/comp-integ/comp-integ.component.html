@@ -49,7 +49,7 @@
   </tr>
   <tr *ngFor="let item of datosFiltrados">
     <td>{{item.descripcion}}</td>
-    <td>{{item.importe | filtroRangoFecha:0:2022-10-01:2022-10-31}}</td>
+    <td>{{item.importe | sumByConcepto:'descripcion'}}</td>
     <td>{{item.importe}}</td>
   </tr>
 </table>

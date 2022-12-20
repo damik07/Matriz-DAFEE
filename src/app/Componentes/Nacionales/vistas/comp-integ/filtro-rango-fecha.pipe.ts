@@ -5,24 +5,28 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FiltroRangoFechaPipe implements PipeTransform {
 
-  transform(items: any[], field: any, value1: any, value2: any): any [] {
+  transform(items: any[], value1: any, value2: any): any [] {
     if (!items) {
       return [];
     }
-    if (!field || !value1 || !value2) {
+    if (!value1 || !value2) {
       return items;
     }
 
-    return items.filter(singleItem =>
-      singleItem[field].some(dato => {
-        let fechaDato = new Date(dato.fecha);
+    return items.filter(item => {
+      const itemDate = new Date(item.fecha);
+      return itemDate >= new Date(value1) && itemDate <= new Date(value2);
+    });
+
+    //return items.filter(singleItem =>
+      //singleItem[field].some(dato => {
+        //let fechaDato = new Date(dato.fecha);
         //let hoy = new Date();
         //let diferencia = Math.abs(hoy.getTime() - fechaDato.getTime());
         //let diasDiferencia = Math.ceil(diferencia / (1000 * 3600 * 24));
-        return fechaDato >= value1 && fechaDato <= value2;
-        
-      })
-    );
+        //return fechaDato >= value1 && fechaDato <= value2;        
+      //})
+    //);
   }
   
 
