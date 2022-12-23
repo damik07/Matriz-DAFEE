@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { dateComparator } from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker-tools';
 
 @Pipe({
   name: 'filtroRangoFecha'
@@ -13,10 +14,29 @@ export class FiltroRangoFechaPipe implements PipeTransform {
       return items;
     }
 
-    return items.filter(item => {
-      const itemDate = new Date(item.fecha);
-      return itemDate >= new Date(value1) && itemDate <= new Date(value2);
-    });
+    //return items.filter(item => {
+      //const itemDate = item.fecha;
+      //return itemDate >= value1 && itemDate <= value2;
+    //});
+
+    const filteredItems = [];
+    for (const item of items) {
+      // Extrae la fecha del objeto - El error está en que items solo tre el valor de los filtros
+      const itemDate = new Date(item);
+      const value1a = new Date(Date.parse(value1));
+      const value2a = new Date(Date.parse(value2));
+      //const datef = itemDate.split('-');
+      //const dateu = new Date(datef[0], datef[1], datef[2]);
+      console.log(items);
+      console.log(itemDate);
+      console.log(value1a);
+      console.log(filteredItems);
+      if (itemDate >= value1a && itemDate <= value2a) {
+        filteredItems.push(item);
+      }
+    }
+    return filteredItems;
+  }
 
     //return items.filter(singleItem =>
       //singleItem[field].some(dato => {
@@ -27,7 +47,7 @@ export class FiltroRangoFechaPipe implements PipeTransform {
         //return fechaDato >= value1 && fechaDato <= value2;        
       //})
     //);
-  }
+  //}
   
 
 }
