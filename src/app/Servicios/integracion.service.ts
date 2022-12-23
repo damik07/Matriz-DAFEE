@@ -8,25 +8,25 @@ export class IntegracionService {
     "fecha": "2022-10-01",
     "codigo": "01",
     "descripcion": "IVA",
-    "importe": "150"
+    "importe": 150
   },
   {
     "fecha": "2022-10-01",
     "codigo": "02",
     "descripcion": "Ganancias",
-    "importe": "350"
+    "importe": 350
   },
   {
     "fecha": "2022-11-01",
     "codigo": "01",
     "descripcion": "IVA",
-    "importe": "450"
+    "importe": 450
   },
   {
     "fecha": "2022-12-01",
     "codigo": "01",
     "descripcion": "IVA",
-    "importe": "550"
+    "importe": 550
   }
 ]
 

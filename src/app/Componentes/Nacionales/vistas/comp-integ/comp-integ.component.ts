@@ -15,6 +15,7 @@ export class CompIntegComponent implements OnInit {
   dataInteg?:any[];
   datosFiltrados?:any[];
   item:any;
+  sumary?:any[];
     
 
   constructor(private router:Router, private intService:IntegracionService) {
@@ -34,18 +35,31 @@ export class CompIntegComponent implements OnInit {
       
       const dFiltrado1 = datosFiltrados1.map(obj => ({
         ...obj,
-        filtro: "filtro1"
+        importe1: obj.importe,
+        ...obj,
+        importe2: 0
       }));
       
       const dfiltrado2 = datosFiltrados2.map(obj => ({
         ...obj,
-        filtro: "filtro2"
+        importe1: 0,
+        ...obj,
+        importe2: obj.importe
       }));
 
-
-      this.datosFiltrados = datosFiltrados1.concat(datosFiltrados2);
+      const datosFiltrados = dFiltrado1.concat(dfiltrado2);
       console.log(this.datosFiltrados);
-      console.log(this.dataInteg);
+      
+      this.sumary = this.datosFiltrados.reduce((acc, item) => {
+        if (!acc[item.descripcion]) {
+          acc[item.descripcion] = {importe: 0, importe1: 0, importe2: 0};
+        }
+        acc[item.descripcion] += item.importe;
+        acc[item.descripcion] += item.importe1;
+        acc[item.descripcion] += item.importe2;
+        return acc;
+      }, {});
+      console.log(this.sumary);
     
   }
 
