@@ -47,16 +47,16 @@ export class CompIntegComponent implements OnInit {
         importe2: obj.importe
       }));
 
-      const datosFiltrados = dFiltrado1.concat(dfiltrado2);
+      this.datosFiltrados = dFiltrado1.concat(dfiltrado2);
       console.log(this.datosFiltrados);
       
       this.sumary = this.datosFiltrados.reduce((acc, item) => {
         if (!acc[item.descripcion]) {
           acc[item.descripcion] = {importe: 0, importe1: 0, importe2: 0};
         }
-        acc[item.descripcion] += item.importe;
-        acc[item.descripcion] += item.importe1;
-        acc[item.descripcion] += item.importe2;
+        acc[item.descripcion].importe += item.importe;
+        acc[item.descripcion].importe1 += item.importe1;
+        acc[item.descripcion].importe2 += item.importe2;
         return acc;
       }, {});
       console.log(this.sumary);
