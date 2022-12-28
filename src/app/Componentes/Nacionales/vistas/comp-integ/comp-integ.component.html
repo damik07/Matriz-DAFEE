@@ -64,10 +64,10 @@
     <tfoot>
       <tr>
         <th>TOTALES</th>
-        <td>77</td>
-        <td>77</td>
-        <td>77</td>
-        <td>77</td>
+        <td>{{ sumary.reduce((acc, item) => acc + item.importe1, 0) }}</td>
+        <td>{{ sumary.reduce((acc, item) => acc + item.importe2, 0) }}</td>
+        <td>{{ sumary.reduce((acc, item) => acc + (item.importe1 - item.importe2), 0) }}</td>
+        <td>{{ sumary.reduce((acc, item) => acc + ((item.importe1 - item.importe2) / item.importe2), 0) }}</td>
       </tr>
     </tfoot>
 </table>
