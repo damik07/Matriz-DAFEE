@@ -2,7 +2,7 @@
   <div>
   <div class="row">
     <div class="col-1">
-      <p>Columna 1</p>
+      <p>Filtro 1</p>
     </div>
     <div class="col-2">
       <label for="startDate1" class="form-label">Fecha inicio</label>
@@ -20,7 +20,7 @@
   <div class="row">
     
     <div class="col-1">
-      <p>Columna 2</p>
+      <p>Filtro 2</p>
     </div>
     <div class="col-2">
       <label for="startDate2" class="form-label">Fecha inicio</label>
@@ -42,16 +42,34 @@
 <hr>
 
 <table class="table table-striped table-hover" id="comp-integracion">
-  <tr>
-    <th>Descripción</th>
-    <th>Importe columna 1</th>
-    <th>Importe columna 2</th>
-  </tr>
-  <tr *ngFor="let item of sumary">
-    <td>{{item.descripcion}}</td>
-    <td>{{item.importe1}}</td>
-    <td>{{item.importe2}}</td>
-  </tr>
+  <caption>Comparativo Integración de Recursos de Origen Nacional</caption>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Filtro 1</th>
+        <th>Filtro 2</th>
+        <th>Var. Absoluta</th>
+        <th>Var. Relativa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of sumary">
+        <td>{{item.descripcion}}</td>
+        <td>{{item.importe1}}</td>
+        <td>{{item.importe2}}</td>
+        <td>{{ item.importe1 - item.importe2 }}</td>
+        <td>{{ item.importe2 === 0 ? 0 : (item.importe1 - item.importe2) / item.importe2 }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>TOTALES</th>
+        <td>77</td>
+        <td>77</td>
+        <td>77</td>
+        <td>77</td>
+      </tr>
+    </tfoot>
 </table>
 
 <hr>
