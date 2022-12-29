@@ -9,12 +9,12 @@ import { NavbarComponent } from './Componentes/navbar/navbar.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { MenuNacComponent } from './Componentes/Nacionales/menu-nac/menu-nac.component';
 import { CompIntegComponent } from './Componentes/Nacionales/vistas/comp-integ/comp-integ.component';
-import { SerieComponent } from './Componentes/Nacionales/vistas/serie/serie.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { SerieIntegComponent } from './Componentes/Nacionales/vistas/serie-integ/serie-integ.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
