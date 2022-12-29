@@ -10,9 +10,10 @@ import { FooterComponent } from './Componentes/footer/footer.component';
 import { MenuNacComponent } from './Componentes/Nacionales/menu-nac/menu-nac.component';
 import { CompIntegComponent } from './Componentes/Nacionales/vistas/comp-integ/comp-integ.component';
 import { SerieComponent } from './Componentes/Nacionales/vistas/serie/serie.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, NgbModule ],
+  imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule ],
   declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieComponent ],
   bootstrap:    [ AppComponent ]
 })
