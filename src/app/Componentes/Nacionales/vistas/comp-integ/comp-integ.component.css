@@ -8,7 +8,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   border: 2px solid;
-   
+     
 }
 thead th:nth-child(1) {
   width: 40%;

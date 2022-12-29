@@ -7,7 +7,7 @@
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li *ngFor="let subMenu of item.submenu">
-      <a href="#" class="nav-link link-dark">
+      <a href="{{subMenu.url}}" class="nav-link link-dark">
         <i class="{{subMenu.icono}}"></i>
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
         {{subMenu.titulo}}

@@ -9,7 +9,7 @@ export class SidebarService {
     titulo: "Integración Recursos Nacionales",
     icono: "nav-icon",
     submenu:[
-     {titulo: "Comparativo", url: "compInteg", icono: "fa fa-users"},
+     {titulo: "Comparativo", url: "compIntegracion", icono: "fa fa-users"},
      {titulo: "Serie", url: "serieInteg", icono: "fa fa-users"},
      {titulo: "Recaudación Real", url: "realInteg", icono: "fa fa-users"}
     ]
