@@ -55,19 +55,19 @@
     <tbody>
       <tr *ngFor="let item of sumary">
         <td>{{item.descripcion}}</td>
-        <td>{{item.importe1}}</td>
-        <td>{{item.importe2}}</td>
-        <td>{{ item.importe1 - item.importe2 }}</td>
-        <td>{{ item.importe2 === 0 ? 0 : (item.importe1 - item.importe2) / item.importe2 }}</td>
+        <td>{{item.importe1.toFixed(2)}}</td>
+        <td>{{item.importe2.toFixed(2)}}</td>
+        <td>{{ (item.importe1 - item.importe2).toFixed(2) }}</td>
+        <td>{{ item.importe2 === 0 ? 0 : ((item.importe1.toFixed(2) - item.importe2.toFixed(2)) / item.importe2.toFixed(2) | percent:'.2') }}</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
         <th>TOTALES</th>
-        <td>{{ sumary.reduce((acc, item) => acc + item.importe1, 0) }}</td>
-        <td>{{ sumary.reduce((acc, item) => acc + item.importe2, 0) }}</td>
-        <td>{{ sumary.reduce((acc, item) => acc + (item.importe1 - item.importe2), 0) }}</td>
-        <td>{{ sumary.reduce((acc, item) => acc + ((item.importe1 - item.importe2) / item.importe2), 0) }}</td>
+        <td>{{ total1.toFixed(2) }}</td>
+        <td>{{ total2.toFixed(2) }}</td>
+        <td>{{ (total1 - total2).toFixed(2) }}</td>
+        <td>{{ total2 === 0 ? 0 : ((total1.toFixed(2) - total2.toFixed(2)) / total2.toFixed(2) | percent:'.2') }}</td>
       </tr>
     </tfoot>
 </table>
