@@ -14,8 +14,6 @@ import * as XLSX from 'xlsx';
 export class CompIntegComponent implements OnInit {
 
   dataInteg?:any[];
-  datosFiltrados?:any[];
-  item:any;
   sumary?:any[];
   total1:any;
   total2:any;
@@ -50,10 +48,10 @@ export class CompIntegComponent implements OnInit {
           importe2: obj.importe
         }));
 
-        this.datosFiltrados = dFiltrado1.concat(dfiltrado2);
-        console.log(this.datosFiltrados);
+        const datosFiltrados = dFiltrado1.concat(dfiltrado2);
         
-        this.sumary = this.datosFiltrados.reduce((acc, item) => {
+        
+        this.sumary = datosFiltrados.reduce((acc, item) => {
           const existingItem = acc.find(i => i.descripcion === item.descripcion);
               if (existingItem) {
               existingItem.importe += item.importe;
@@ -64,7 +62,7 @@ export class CompIntegComponent implements OnInit {
             }
             return acc;
           }, []);
-        console.log(this.sumary);
+        
 
         this.total1 = this.sumary.reduce((acc, item) => acc + item.importe1,0);
         this.total2 = this.sumary.reduce((acc, item) => acc + item.importe2,0);
