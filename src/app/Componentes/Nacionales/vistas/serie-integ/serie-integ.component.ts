@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IntegracionService } from '../../../../Servicios/integracion.service';
 
 @Component({
   selector: 'app-serie-integ',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SerieIntegComponent implements OnInit {
 
-  constructor() { }
+  dataInteg?:any[];
+
+  constructor(private router:Router, private intService:IntegracionService) {
+    this.dataInteg = this.intService.integracion; }
 
   ngOnInit() {
   }

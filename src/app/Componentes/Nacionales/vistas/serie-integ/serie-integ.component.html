@@ -1,3 +1,29 @@
-<p>
-No te borres
-</p>
+<form>
+  <div>
+    <div class="row">
+    <div class="col-2">
+      <label for="cuenta" class="form-label">Cuenta de impuesto</label>
+      <select class="form-control" type="text" name="cuenta" id="cuenta" ngModel>
+        <option *ngFor="let item of dataInteg">{{item.descripcion}}</option>
+      </select>
+    </div>
+      <div class="col-2">
+        <label for="startDate1" class="form-label">Fecha inicio</label>
+        <input class="form-control" type="month" name="startDate1" id="startDate1" ngModel>
+
+      </div>
+      <div class="col-2">
+
+        <label for="endDate1" class="form-label">Fecha fin</label>
+        <input class="form-control" type="month" name="endDate1" id="endDate1" ngModel>
+      </div>
+      
+    </div>
+    <br>
+    <div class="col-2">
+      <button type="submit" class="btn btn-primary mb-3">Filtrar</button>
+    </div>
+  </div>
+  
+  
+</form>
