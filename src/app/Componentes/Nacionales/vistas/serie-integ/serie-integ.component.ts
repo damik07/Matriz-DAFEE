@@ -42,7 +42,7 @@ export class SerieIntegComponent implements OnInit {
 
       const dFiltrado1 = filtroCuenta.map(obj => {
         const date = new Date(obj.fecha);
-        let mes = date.getMonth() + 1;
+        let mes = new Intl.DateTimeFormat('es-ES', { month: 'long'}).format(date);
         let año = date.getFullYear();
         
         return{
