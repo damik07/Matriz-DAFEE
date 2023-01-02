@@ -40,9 +40,20 @@ export class SerieIntegComponent implements OnInit {
     const filtroCuenta = filtroFecha.filter(dato =>
       dato.descripcion = formData.cuenta);
 
+      const dFiltrado1 = filtroCuenta.map(obj => {
+        const date = new Date(obj.fecha);
+        let mes = date.getMonth() + 1;
+        let año = date.getFullYear();
+        
+        return{
+          descripcion: obj.descripcion,
+          importe: obj.importe,
+          mes: mes,
+          año: año
+        }
+      });
     
-    
-    console.log(filtroCuenta);
+    console.log(dFiltrado1);
 
 
     // Inicializa el gráfico
