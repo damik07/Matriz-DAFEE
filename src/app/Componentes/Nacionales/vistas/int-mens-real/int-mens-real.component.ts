@@ -20,4 +20,9 @@ export class IntMensRealComponent implements OnInit {
   ngOnInit() {
   }
 
+  filterData1(formData){           
+    // Filtrar los datos del servicio según el rango de fechas especificado en el formulario
+    const datosFiltrados1 = this.dataInteg.filter(dato => 
+      dato.fecha >= formData.startDate1 && dato.fecha <= formData.endDate1);
+    }
 }
