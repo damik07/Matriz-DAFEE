@@ -94,7 +94,6 @@ export class SerieIntegComponent implements OnInit {
     
         
     },
-    //options: {    scales: {      yAxes: [{        ticks: {          beginAtZero: true        }      }]    }  }
     options: {
       responsive: true,
       plugins: {
