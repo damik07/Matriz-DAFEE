@@ -30,11 +30,29 @@ export class IntMensRealComponent implements OnInit {
     );
     const dfiltro1 = datosFiltrados1.filter(dato =>
       new Date(dato.fecha).getFullYear() === new Date(formData.startDate1).getFullYear()
-      )
+    );
+    const dfiltro2 = datosFiltrados1.filter(dato =>
+      new Date(dato.fecha).getFullYear() === new Date(formData.startDate1).getFullYear() -1
+    );
+
+    const dFiltrado1 = dfiltro1.map(obj => ({
+      ...obj,
+      importe1: obj.importe,
+      ...obj,
+      importe2: 0
+    }));
+    
+    const dfiltrado2 = dfiltro2.map(obj => ({
+      ...obj,
+      importe1: 0,
+      ...obj,
+      importe2: obj.importe
+    }));
+
+    const datosFiltrados = dFiltrado1.concat(dfiltrado2);
 
 
-
-    console.log(datosFiltrados1);
+    console.log(datosFiltrados);
 
 
 
