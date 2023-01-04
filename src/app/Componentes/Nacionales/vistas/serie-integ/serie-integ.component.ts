@@ -13,6 +13,7 @@ export class SerieIntegComponent implements OnInit {
 
   dataInteg?:any[];
   cuentas:any[];
+  suma:any[];
   
 
   constructor(private router:Router, private intService:IntegracionService) {
@@ -34,49 +35,64 @@ export class SerieIntegComponent implements OnInit {
 
   };
 
+  
+
   filterGrafico(formData){
     const filtroFecha = this.dataInteg.filter(dato => 
       dato.fecha >= formData.startDate1 && dato.fecha <= formData.endDate1);
     const filtroCuenta = filtroFecha.filter(dato =>
       dato.descripcion = formData.cuenta);
 
-      const dFiltrado1 = filtroCuenta.map(obj => {
-        const date = new Date(obj.fecha);
-        let mes = new Intl.DateTimeFormat('es-ES', { month: 'long'}).format(date);
-        let año = date.getFullYear();
-        
-        return{
-          descripcion: obj.descripcion,
-          importe: obj.importe,
-          mes: mes,
-          año: año
-        }
-      });
-    
-    console.log(dFiltrado1);
 
+
+     let result = Object.entries(filtroCuenta.reduce((acc, item) => {
+        let date = new Date(item.fecha);
+        let mes = date.getMonth() + 1;
+        let año = date.getFullYear();
+      
+        if (!acc[año]) {
+          acc[año] = Array(12).fill(0);
+        }
+      
+        acc[año][mes] += item.importe;
+      
+        return acc;
+      }, {})).map(([año, meses]) => ({
+        label: año,
+        data: meses
+      }));
+      
+      console.log(result);
+      
+      function getRandomColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      let colors = new Map();
 
     // Inicializa el gráfico
     let chart = new Chart('chart', {
     type: 'bar',
     data: {
-      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-      datasets: [
-        {
-          label: 'Año 2020',
-          data: [100, 200, 300, 400, 500, 600],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1
-        },
-        {
-          label: 'Año 2021',
-          data: [200, 400, 600, 800, 1000, 1200],
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
+      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',],
+      datasets: result.map(item => {
+        if (!colors.has(item.label)) {
+          colors.set(item.label, getRandomColor());
         }
-      ]
+  
+        return {
+          label: item.label,
+          data: item.data,
+          backgroundColor: colors.get(item.label),
+          borderColor: colors.get(item.label),
+          borderWidth: 1
+        };
+      })
+    
+        
     },
     //options: {    scales: {      yAxes: [{        ticks: {          beginAtZero: true        }      }]    }  }
     options: {
@@ -87,7 +103,7 @@ export class SerieIntegComponent implements OnInit {
         },
         title: {
           display: true,
-          text: 'Chart.js Bar Chart'
+          text: formData.cuenta
         }
       }
     },

@@ -27,6 +27,24 @@ export class IntegracionService {
     "codigo": "01",
     "descripcion": "IVA",
     "importe": 550
+  },
+  {
+    "fecha": "2023-11-01",
+    "codigo": "01",
+    "descripcion": "IVA",
+    "importe": 150
+  },
+  {
+    "fecha": "2023-11-01",
+    "codigo": "01",
+    "descripcion": "IVA",
+    "importe": 250
+  },
+  {
+    "fecha": "2023-11-01",
+    "codigo": "01",
+    "descripcion": "IVA",
+    "importe": 100
   }
 ]
 
