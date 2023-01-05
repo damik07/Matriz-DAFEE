@@ -14,3 +14,40 @@
   </div>
 </form>
 
+<hr>
+
+<table class="table table-striped table-hover" id="comp-int-real" *ngFor="let o of ipc2">
+  <caption>Comparativo Integración Real de Recursos de Origen Nacional</caption>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Filtro 1</th>
+        <th>Filtro 2</th>
+        <th>Var. Absoluta</th>
+        <th>Var. Relativa</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let i of ipc1">
+      <tr *ngFor="let item of sumary">
+        <td>{{item.descripcion}}</td>
+        <td>{{(item.importe1 / (i.valor / o.valor)).toFixed(2)}}</td>
+        <td>{{item.importe2.toFixed(2)}}</td>
+        <td>{{ ((item.importe1 / (i.valor / o.valor)) - item.importe2).toFixed(2) }}</td>
+        <td>{{ item.importe2 === 0 ? 0 : (((item.importe1 / (i.valor / o.valor)) - item.importe2) / item.importe2 | percent:'.2') }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr *ngFor="let i of ipc1">
+        <th>TOTALES</th>
+        <td>{{ (total1 / (i.valor / o.valor)).toFixed(2) }}</td>
+        <td>{{ total2.toFixed(2) }}</td>
+        <td>{{ ((total1 / (i.valor / o.valor)) - total2).toFixed(2) }}</td>
+        <td>{{ total2 === 0 ? 0 : ((((total1 / (i.valor / o.valor)) - total2) / total2) | percent:'.2') }}</td>
+      </tr>
+    </tfoot>
+</table>
+
+<hr>
+
+<button (click)="exportToExcel()" class="btn btn-primary mb-3">Exportar</button>
+

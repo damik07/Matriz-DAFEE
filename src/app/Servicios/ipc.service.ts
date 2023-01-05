@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn:'root'})
 export class IpcService {
 
   ipc?:any=[{
