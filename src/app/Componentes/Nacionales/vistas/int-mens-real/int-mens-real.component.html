@@ -49,5 +49,5 @@
 
 <hr>
 
-<button (click)="exportToExcel()" class="btn btn-primary mb-3">Exportar</button>
+<button (click)="exportToExcel()" class="btn btn-primary mb-3" *ngIf="sumary">Exportar</button>
 
