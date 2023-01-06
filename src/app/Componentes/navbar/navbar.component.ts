@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   collapsed = true;
-  
+  selected: string;
+
+    @Output() messageEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  
+  sendMessage(item:string) {
+    this.messageEvent.emit(item);
+    
+  }
+
+  
 
 }

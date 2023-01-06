@@ -1,4 +1,5 @@
-<div *ngFor="let item of menuItems">
+<div (messageEvent)="receiveMessage($event)">
+<div *ngFor="let item of menuItems" >
   <div class="d-flex flex-column flex-shrink-0 p-3 bs-ligth" style="width: 280px;" *ngFor="let i of item.integracion">
     <hr>
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -36,4 +37,5 @@
       -->
   </div>
 
+</div>
 </div>
