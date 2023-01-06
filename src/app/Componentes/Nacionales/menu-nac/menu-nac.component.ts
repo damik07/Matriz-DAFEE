@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarService } from '../../../Servicios/sidebar.service';
 
@@ -12,23 +12,28 @@ export class MenuNacComponent implements OnInit {
   menuItems?:any[];
   message:string;
 
-
+  @Input() messageEvent: EventEmitter<string>;
 
   constructor(private router:Router, private sidebarService:SidebarService) {
     this.menuItems = this.sidebarService.menu;
     
       console.log(this.menuItems)
-     
+      this.messageEvent.subscribe(message => {
+        this.message = message;
+      });
+     console.log(this.message)
     
   }
   ngOnInit() {
-  }
-
-  receiveMessage($event) {
-    this.message = $event
-    console.log(this.message)
+    
+   
+   
   }
 
   
+  getIterable(): any[] {
+    return 'item'[this.message];
+
+  }
 
 }
