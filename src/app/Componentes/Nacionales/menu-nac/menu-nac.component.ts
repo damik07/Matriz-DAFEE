@@ -31,7 +31,7 @@ export class MenuNacComponent implements OnInit {
    
   }
 
-  //receiveMessage($event) {    this.message = $event  }
+ 
   
   getIterable(): any[] {
     return 'item'[this.message];
