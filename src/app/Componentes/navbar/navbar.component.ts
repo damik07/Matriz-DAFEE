@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CambiosSidebarService } from '../../Servicios/cambios-sidebar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,17 +9,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class NavbarComponent implements OnInit {
   collapsed = true;
   
-
-  @Output() messageEvent = new EventEmitter<string>();
-
-  constructor() { }
+  constructor(private cambioSidebar:CambiosSidebarService) { }
 
   ngOnInit() {
+
   }
 
-  
   sendMessage(item:string) {
-    this.messageEvent.emit(item);
+    this.cambioSidebar.messageEvent.emit(item);
     
   }
 

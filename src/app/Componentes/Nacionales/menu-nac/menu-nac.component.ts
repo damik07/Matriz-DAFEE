@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CambiosSidebarService } from '../../../Servicios/cambios-sidebar.service';
 import { SidebarService } from '../../../Servicios/sidebar.service';
 
 @Component({
@@ -12,24 +13,25 @@ export class MenuNacComponent implements OnInit {
   menuItems?:any[];
   message:string;
 
-  @Input() messageEvent: EventEmitter<string>;
+  
 
-  constructor(private router:Router, private sidebarService:SidebarService) {
+  constructor(private router:Router, private sidebarService:SidebarService, private cambioSidebar:CambiosSidebarService) {
     this.menuItems = this.sidebarService.menu;
     
-      console.log(this.menuItems)
-      this.messageEvent.subscribe(message => {
-        this.message = message;
-      });
-     console.log(this.message)
+    console.log(this.menuItems)
+      
+    console.log(this.message)
     
   }
   ngOnInit() {
-    
+    this.cambioSidebar.messageEvent.subscribe(data =>{
+      console.log(data);
+    })
    
    
   }
 
+  //receiveMessage($event) {    this.message = $event  }
   
   getIterable(): any[] {
     return 'item'[this.message];
