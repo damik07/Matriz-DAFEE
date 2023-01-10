@@ -11,8 +11,8 @@ export class SidebarService {
     titulo: "Integración Recursos Nacionales",
     icono: "nav-icon",
     submenu:[
-     {titulo: "Comparativo", url: "compIntegracion", icono: "fa fa-users"},
-     {titulo: "Serie", url: "serieInteg", icono: "fa fa-users"},
+     {titulo: "Comparativo Integración", url: "compIntegracion", icono: "fa fa-users"},
+     {titulo: "Serie Integración", url: "serieInteg", icono: "fa fa-users"},
      {titulo: "Recaudación Real", url: "realInteg", icono: "fa fa-users"}
     ]
 
@@ -22,8 +22,8 @@ export class SidebarService {
     titulo: "Distribución Recursos Nacionales",
     icono: "nav-icon",
     submenu:[
-     {titulo: "Comparativo", url: "compIntegracion", icono: "fa fa-users"},
-     {titulo: "Serie", url: "serieInteg", icono: "fa fa-users"},
+     {titulo: "Comparativo Distribución", url: "compIntegracion", icono: "fa fa-users"},
+     {titulo: "Serie Distribución", url: "serieInteg", icono: "fa fa-users"},
      {titulo: "Distribución Real", url: "realInteg", icono: "fa fa-users"}
     ]
 

@@ -20,12 +20,11 @@ export class MenuNacComponent implements OnInit {
     
     console.log(this.menuItems)
       
-    console.log(this.message)
+   
     
   }
   ngOnInit() {
     this.cambioSidebar.messageEvent.subscribe(data =>{
-      console.log(data);
       this.message = data;
     })
    
