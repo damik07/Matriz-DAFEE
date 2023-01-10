@@ -26,6 +26,7 @@ export class MenuNacComponent implements OnInit {
   ngOnInit() {
     this.cambioSidebar.messageEvent.subscribe(data =>{
       console.log(data);
+      this.message = data;
     })
    
    
