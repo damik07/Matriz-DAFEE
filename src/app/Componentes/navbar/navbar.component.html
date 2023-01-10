@@ -16,10 +16,10 @@
       <li class="nav-item" ngbDropdown>
         <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button"> Recursos Nacionales </a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">          
-          <a ngbDropdownItem href="/compIntegracion" (click)="sendMessage('integracion')">Integración</a>
-          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Distribución</a>
-          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Informe Mensual</a>
-          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Planillas Mensual</a>
+          <a ngbDropdownItem href="#" (click)="sendMessage('integracion')">Integración</a>
+          <a ngbDropdownItem href="#" (click)="sendMessage('distribucion')">Distribución</a>
+          <a ngbDropdownItem href="#" (click)="sendMessage('infMensNac')">Informe Mensual</a>
+          <a ngbDropdownItem href="#" (click)="sendMessage('planMensNac')">Planillas Mensual</a>
         </div>
       </li>
    
