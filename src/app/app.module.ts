@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
-import { MenuNacComponent } from './Componentes/menu-nac/menu-nac.component';
+import { MenuNacComponent } from './Componentes/sidebar/menu-nac.component';
 import { CompIntegComponent } from './Componentes/Nacionales/vistas/comp-integ/comp-integ.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SerieIntegComponent } from './Componentes/Nacionales/vistas/serie-integ/serie-integ.component';
