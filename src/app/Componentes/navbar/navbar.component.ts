@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  sendMessage(item:string) {
+  sendMessage(item:any) {
     this.cambioSidebar.messageEvent.emit(item);
     
   }

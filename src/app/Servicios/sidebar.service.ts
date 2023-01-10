@@ -16,7 +16,7 @@ export class SidebarService {
      {titulo: "Recaudación Real", url: "realInteg", icono: "fa fa-users"}
     ]
 
-  }],
+    }],
 
   distribucion:[{
     titulo: "Distribución Recursos Nacionales",

@@ -4,7 +4,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
   providedIn:'root'})
 export class CambiosSidebarService {
 
-  @Output() messageEvent: EventEmitter<string> = new EventEmitter<string>();
+  @Output() messageEvent: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
