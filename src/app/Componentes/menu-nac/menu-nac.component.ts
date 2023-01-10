@@ -1,7 +1,7 @@
 import { Component, DoCheck, EventEmitter, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CambiosSidebarService } from '../../../Servicios/cambios-sidebar.service';
-import { SidebarService } from '../../../Servicios/sidebar.service';
+import { CambiosSidebarService } from '../../Servicios/cambios-sidebar.service';
+import { SidebarService } from '../../Servicios/sidebar.service';
 
 @Component({
   selector: 'app-menu-nac',
