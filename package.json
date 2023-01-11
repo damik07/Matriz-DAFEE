@@ -35,6 +35,7 @@
     "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css": "*",
     "jQuery": "^1.7.4",
     "ng2-charts": "^4.1.1",
+    "ngx-file-drop": "^14.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "typescript": ">=4.6.2 <4.9",
