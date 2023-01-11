@@ -68,7 +68,7 @@ export class SerieDistComponent implements OnInit {
       let colors = new Map();
 
     // Inicializa el gráfico
-    let chart = new Chart('chart-dist', {
+    let chart = new Chart('chart', {
     type: 'bar',
     data: {
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',],
