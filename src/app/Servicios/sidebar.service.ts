@@ -22,9 +22,9 @@ export class SidebarService {
     titulo: "Distribución Recursos Nacionales",
     icono: "nav-icon",
     submenu:[
-     {titulo: "Comparativo Distribución", url: "compIntegracion", icono: "fa fa-users"},
-     {titulo: "Serie Distribución", url: "serieInteg", icono: "fa fa-users"},
-     {titulo: "Distribución Real", url: "realInteg", icono: "fa fa-users"}
+     {titulo: "Comparativo Distribución", url: "compDist", icono: "fa fa-users"},
+     {titulo: "Serie Distribución", url: "serieDist", icono: "fa fa-users"},
+     {titulo: "Distribución Real", url: "realDist", icono: "fa fa-users"}
     ]
 
   }]

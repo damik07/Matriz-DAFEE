@@ -69,7 +69,7 @@ export class CompDistComponent implements OnInit {
 
   name = 'ExcelSheet.xlsx';
   exportToExcel(): void {
-    let element = document.getElementById('comp-integracion');
+    let element = document.getElementById('comp-distribucion');
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
     const book: XLSX.WorkBook = XLSX.utils.book_new();
