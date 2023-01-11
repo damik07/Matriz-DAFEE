@@ -72,7 +72,7 @@ export class CompIntegComponent implements OnInit {
     
 
 
-    name = 'ExcelSheet.xlsx';
+    name = 'Comparativo Integracion.xlsx';
     exportToExcel(): void {
       let element = document.getElementById('comp-integracion');
       const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);

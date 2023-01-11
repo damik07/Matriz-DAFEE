@@ -67,7 +67,7 @@ export class CompDistComponent implements OnInit {
   
 
 
-  name = 'ExcelSheet.xlsx';
+  name = 'Comparativo Distribucion.xlsx';
   exportToExcel(): void {
     let element = document.getElementById('comp-distribucion');
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);

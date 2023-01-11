@@ -14,10 +14,11 @@ import { SerieIntegComponent } from './Componentes/Nacionales/vistas/serie-integ
 import { IntMensRealComponent } from './Componentes/Nacionales/vistas/int-mens-real/int-mens-real.component';
 import { CompDistComponent } from './Componentes/Nacionales/vistas/distribucion/comp-dist/comp-dist.component';
 import { DistMensRealComponent } from './Componentes/Nacionales/vistas/distribucion/dist-mens-real/dist-mens-real.component';
+import { SerieDistComponent } from './Componentes/Nacionales/vistas/distribucion/serie-dist/serie-dist.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, CompDistComponent, DistMensRealComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
