@@ -13,7 +13,8 @@ export class SidebarService {
     submenu:[
      {titulo: "Comparativo Integración", url: "compIntegracion", icono: "fa fa-users"},
      {titulo: "Serie Integración", url: "serieInteg", icono: "fa fa-users"},
-     {titulo: "Recaudación Real", url: "realInteg", icono: "fa fa-users"}
+     {titulo: "Recaudación Real", url: "realInteg", icono: "fa fa-users"},
+     {titulo: "Importador de Base de Datos", url: "BDImpInt", icono: "fa fa-users"}
     ]
 
     }],

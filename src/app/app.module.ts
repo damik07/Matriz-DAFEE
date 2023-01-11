@@ -8,18 +8,19 @@ import { HelloComponent } from './hello.component';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { MenuNacComponent } from './Componentes/sidebar/menu-nac.component';
-import { CompIntegComponent } from './Componentes/Nacionales/vistas/comp-integ/comp-integ.component';
+import { CompIntegComponent } from './Componentes/Nacionales/vistas/integracion/comp-integ/comp-integ.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { SerieIntegComponent } from './Componentes/Nacionales/vistas/serie-integ/serie-integ.component';
-import { IntMensRealComponent } from './Componentes/Nacionales/vistas/int-mens-real/int-mens-real.component';
+import { SerieIntegComponent } from './Componentes/Nacionales/vistas/integracion/serie-integ/serie-integ.component';
+import { IntMensRealComponent } from './Componentes/Nacionales/vistas/integracion/int-mens-real/int-mens-real.component';
 import { CompDistComponent } from './Componentes/Nacionales/vistas/distribucion/comp-dist/comp-dist.component';
 import { DistMensRealComponent } from './Componentes/Nacionales/vistas/distribucion/dist-mens-real/dist-mens-real.component';
 import { SerieDistComponent } from './Componentes/Nacionales/vistas/distribucion/serie-dist/serie-dist.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { BDImportComponent } from './Componentes/Nacionales/vistas/integracion/bdimport/bdimport.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule, NgxFileDropModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
