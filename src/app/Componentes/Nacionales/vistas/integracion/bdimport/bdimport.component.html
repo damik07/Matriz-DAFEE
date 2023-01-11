@@ -6,12 +6,23 @@
       <button type="button" (click)="openFileSelector()">Buscar Archivo</button>
     </ng-template>
 </ngx-file-drop>
+<hr>
 <div class="upload-table" *ngIf="files">
     <table class="table">
-        
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Importe</th>
+            
+            
+          </tr>
+        </thead>
         <tbody class="upload-name-style">
             <tr *ngFor="let item of data; let i=index">
-                <td>{{ item }}</td>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.importe }}</td>
             </tr>
         </tbody>
     </table>

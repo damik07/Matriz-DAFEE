@@ -74,7 +74,7 @@ export class BDImportComponent implements OnInit {
       const ws = wb.Sheets[wsname];
 
       /* guarda la info - !!!!!falta quita las primeras 4 filas por formato de exportación de archivo de la CFI */
-      this.data = <any>(XLSX.utils.sheet_to_json(ws, { range:3 }));
+      this.data = <any>(XLSX.utils.sheet_to_json(ws, {header: ["codigo","descripcion","importe"], range:3 }));
       console.log(this.data);
       
     };
