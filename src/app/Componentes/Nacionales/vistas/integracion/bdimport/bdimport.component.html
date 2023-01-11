@@ -1,4 +1,19 @@
-<ngx-file-drop (onFileDrop)="dropped($event)">
-<!--(onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)"> -->
-Arrastre y suelte los archivos aquí o haga clic para cargar
+<div class="center">
+<ngx-file-drop dropZoneLabel="Suelte archivos aquí" (onFileDrop)="dropped($event)" 
+(onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+    Contenido personalizado opcional que reemplaza todo el contenido predeterminado.
+      <button type="button" (click)="openFileSelector()">Buscar Archivo</button>
+    </ng-template>
 </ngx-file-drop>
+<div class="upload-table" *ngIf="files">
+    <table class="table">
+        
+        <tbody class="upload-name-style">
+            <tr *ngFor="let item of data; let i=index">
+                <td>{{ item }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

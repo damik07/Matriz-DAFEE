@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import * as XLSX from 'xlsx';
 
 @Component({
@@ -8,17 +9,17 @@ import * as XLSX from 'xlsx';
 })
 export class BDImportComponent implements OnInit {
 
-  files?:any;
-  data?:any;
+  public files: NgxFileDropEntry[] = [];
+  data?:any[];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  dropped(event) {
-    this.files = event.files;
-    for (const droppedFile of event.files) {
+  public dropped(files: NgxFileDropEntry[]) {
+    this.files = files;
+    for (const droppedFile of files) {
       // Verificar que es un archivo
       if (droppedFile.fileEntry.isFile) {
         const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
@@ -26,10 +27,40 @@ export class BDImportComponent implements OnInit {
           // Aquí puede acceder al archivo real
           console.log(droppedFile.relativePath, file);
           this.obtenerDatosExcel(file);
+
+          /**
+          // Podrías subirlo así:
+          const formData = new FormData()
+          formData.append('logo', file, relativePath)
+
+          // Headers
+          const headers = new HttpHeaders({
+            'security-token': 'mytoken'
+          })
+
+          this.http.post('https://mybackend.com/api/upload/sanitize-and-save-logo', formData, { headers: headers, responseType: 'blob' })
+          .subscribe(data => {
+            // Logotipo desinfectado devuelto desde el backend
+          })
+          **/
+
         });
+      } else {
+        // Era un directorio (se agregan directorios vacíos, de lo contrario solo archivos)
+        const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
+        console.log(droppedFile.relativePath, fileEntry);
       }
     }
   }
+
+  public fileOver(event){
+    console.log(event);
+  }
+
+  public fileLeave(event){
+    console.log(event);
+  }
+
 
   obtenerDatosExcel(file) {
     const reader = new FileReader();
@@ -42,9 +73,10 @@ export class BDImportComponent implements OnInit {
       const wsname = wb.SheetNames[0];
       const ws = wb.Sheets[wsname];
 
-      /* guarda la info - quita las primeras 4 filas por formato de exportación de archivo de la CFI */
-      this.data = <any>(XLSX.utils.sheet_to_json(ws, { header: 1 }));
-      this.data.split(0,4);
+      /* guarda la info - !!!!!falta quita las primeras 4 filas por formato de exportación de archivo de la CFI */
+      this.data = <any>(XLSX.utils.sheet_to_json(ws, { header: 1, range:3 }));
+      console.log(this.data);
+      
     };
     reader.readAsBinaryString(file);
   }
