@@ -8,7 +8,7 @@
 </ngx-file-drop>
 <hr>
 <div class="upload-table" *ngIf="files">
-    <table class="table">
+    <table class="table table-striped table-hover">
         <thead>
           <tr>
             <th>Código</th>
@@ -18,8 +18,8 @@
             
           </tr>
         </thead>
-        <tbody class="upload-name-style">
-            <tr *ngFor="let item of data; let i=index">
+        <tbody>
+            <tr *ngFor="let item of data">
                 <td>{{ item.codigo }}</td>
                 <td>{{ item.descripcion }}</td>
                 <td>{{ item.importe }}</td>
