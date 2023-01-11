@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CompIntegComponent } from '../Componentes/Nacionales/vistas/comp-integ/comp-integ.component';
 import { CompDistComponent } from '../Componentes/Nacionales/vistas/distribucion/comp-dist/comp-dist.component';
+import { DistMensRealComponent } from '../Componentes/Nacionales/vistas/distribucion/dist-mens-real/dist-mens-real.component';
 import { IntMensRealComponent } from '../Componentes/Nacionales/vistas/int-mens-real/int-mens-real.component';
 import { SerieIntegComponent } from '../Componentes/Nacionales/vistas/serie-integ/serie-integ.component';
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'serieInteg', component:SerieIntegComponent},
   {path:'realInteg', component:IntMensRealComponent},
   {path:'compDist', component:CompDistComponent},
+  {path:'realDist', component:DistMensRealComponent},
   //{path:'', redirectTo:'compIntegracion', pathMatch:'full'}
   
 ];

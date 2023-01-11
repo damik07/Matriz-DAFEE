@@ -13,10 +13,11 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SerieIntegComponent } from './Componentes/Nacionales/vistas/serie-integ/serie-integ.component';
 import { IntMensRealComponent } from './Componentes/Nacionales/vistas/int-mens-real/int-mens-real.component';
 import { CompDistComponent } from './Componentes/Nacionales/vistas/distribucion/comp-dist/comp-dist.component';
+import { DistMensRealComponent } from './Componentes/Nacionales/vistas/distribucion/dist-mens-real/dist-mens-real.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, CompDistComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, CompDistComponent, DistMensRealComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
