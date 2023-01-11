@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IntegracionService } from '../../../../Servicios/integracion.service';
+import { IntegracionService } from '../../../../../Servicios/integracion.service';
 import * as XLSX from 'xlsx';
 
 
