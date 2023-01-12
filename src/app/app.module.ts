@@ -17,10 +17,11 @@ import { DistMensRealComponent } from './Componentes/Nacionales/vistas/distribuc
 import { SerieDistComponent } from './Componentes/Nacionales/vistas/distribucion/serie-dist/serie-dist.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { BDImportComponent } from './Componentes/Nacionales/vistas/integracion/bdimport/bdimport.component';
+import { PlCompMensComponent } from './Componentes/plantaPersonal/vistas/pl-comp-mens/pl-comp-mens.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule, NgxFileDropModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
