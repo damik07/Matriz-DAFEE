@@ -84,6 +84,7 @@ export class BDImportComponent implements OnInit {
 
   guardarBD() {
     console.log("agregar función POST luego de crear el backend, en data está la información, falta agregar la fecha")
+    
   }
 
 }
