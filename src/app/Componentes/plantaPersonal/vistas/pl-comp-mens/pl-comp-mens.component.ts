@@ -11,7 +11,7 @@ import { PlantaDePersonalService } from '../../../../Servicios/planta-de-persona
 export class PlCompMensComponent implements OnInit {
 
   dataPlanta?:any[];
-  sumary?:any[];
+  permanente?:any[];
   total1:any;
   total2:any;
   
@@ -47,7 +47,7 @@ const datosFiltrados2 = this.dataPlanta.filter(dato =>
   const datosFiltrados = dFiltrado1.concat(dfiltrado2);
   
   
-  this.sumary = datosFiltrados.reduce((acc, item) => {
+  this.permanente = datosFiltrados.reduce((acc, item) => {
     const existingItem = acc.find(i => i.descripcion === item.descripcion);
         if (existingItem) {
         existingItem.importe += item.importe;
@@ -60,8 +60,8 @@ const datosFiltrados2 = this.dataPlanta.filter(dato =>
     }, []);
   
 
-  this.total1 = this.sumary.reduce((acc, item) => acc + item.importe1,0);
-  this.total2 = this.sumary.reduce((acc, item) => acc + item.importe2,0);
+  this.total1 = this.permanente.reduce((acc, item) => acc + item.importe1,0);
+  this.total2 = this.permanente.reduce((acc, item) => acc + item.importe2,0);
 
 };
 

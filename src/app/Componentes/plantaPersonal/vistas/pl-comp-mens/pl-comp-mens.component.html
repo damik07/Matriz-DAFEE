@@ -21,7 +21,7 @@
 
 <hr>
 
-<table class="table table-striped table-hover" id="comp-pl-mens" *ngIf="sumary">
+<table class="table table-striped table-hover" id="comp-pl-mens" *ngIf="permanente">
   <caption>Comparativo Integración de Recursos de Origen Nacional</caption>
     <thead>
       <tr>
@@ -33,7 +33,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of sumary">
+      <tr *ngFor="let item of permanente">
         <td>{{item.descripcion}}</td>
         <td>{{item.importe1.toFixed(2)}}</td>
         <td>{{item.importe2.toFixed(2)}}</td>
@@ -54,4 +54,4 @@
 
 <hr>
 
-<button (click)="exportToExcel()" class="btn btn-primary mb-3" *ngIf="sumary">Exportar</button>
+<button (click)="exportToExcel()" class="btn btn-primary mb-3" *ngIf="permanente">Exportar</button>
