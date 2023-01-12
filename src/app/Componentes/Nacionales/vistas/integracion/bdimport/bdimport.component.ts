@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import * as XLSX from 'xlsx';
-import { BDImportInteg } from '../../../../../Componentes/Nacionales/vistas/integracion/bdimport/bdimport-integ';
+
 
 @Component({
   selector: 'app-bdimport',
