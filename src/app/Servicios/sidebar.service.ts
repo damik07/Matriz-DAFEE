@@ -28,6 +28,38 @@ export class SidebarService {
      {titulo: "Distribución Real", url: "realDist", icono: "fa fa-users"}
     ]
 
+  }],
+
+  plantaPl:[{
+    titulo: "Planillas Mensuales",
+    icono: "nav-icon",
+    submenu:[
+     {titulo: "Planilla 6", url: "plPlanilla6", icono: "fa fa-users"},
+     {titulo: "Planilla 1 RF", url: "plPlanilla1", icono: "fa fa-users"},
+     {titulo: "Planilla 2 RF", url: "plPlanilla2", icono: "fa fa-users"}
+    ]
+
+  }],
+
+  plantaComp:[{
+    titulo: "Comparativos Planta Personal",
+    icono: "nav-icon",
+    submenu:[
+     {titulo: "Comparativo Mensual", url: "plCompMens", icono: "fa fa-users"},
+     {titulo: "Comparativo Erbes", url: "plCompErbes", icono: "fa fa-users"},
+     {titulo: "Comparativo DA", url: "plCompDA", icono: "fa fa-users"}
+    ]
+
+  }],
+
+  plantaSerie:[{
+    titulo: "Distribución Recursos Nacionales",
+    icono: "nav-icon",
+    submenu:[
+     {titulo: "Serie por Escalafón", url: "plSerieEsc", icono: "fa fa-users"},
+     {titulo: "Serie por DA", url: "plSerieDA", icono: "fa fa-users"}
+    ]
+
   }]
 
 }]
