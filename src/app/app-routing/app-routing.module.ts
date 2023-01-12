@@ -7,6 +7,7 @@ import { SerieDistComponent } from '../Componentes/Nacionales/vistas/distribucio
 import { IntMensRealComponent } from '../Componentes/Nacionales/vistas/integracion/int-mens-real/int-mens-real.component';
 import { SerieIntegComponent } from '../Componentes/Nacionales/vistas/integracion/serie-integ/serie-integ.component';
 import { BDImportComponent } from '../Componentes/Nacionales/vistas/integracion/bdimport/bdimport.component';
+import { PlCompMensComponent } from '../Componentes/plantaPersonal/vistas/pl-comp-mens/pl-comp-mens.component';
 
 const routes: Routes = [
   {path:'compIntegracion', component:CompIntegComponent, //canActivate:[GuardGuard]
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'realDist', component:DistMensRealComponent},
   {path:'serieDist', component:SerieDistComponent},
   {path:'BDImpInt', component:BDImportComponent},
+  {path:'plCompMens', component:PlCompMensComponent},
   //{path:'', redirectTo:'compIntegracion', pathMatch:'full'}
   
 ];
