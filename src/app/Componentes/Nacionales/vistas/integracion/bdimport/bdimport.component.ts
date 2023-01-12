@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import * as XLSX from 'xlsx';
+import { BDImportInteg } from '../../../../../Componentes/Nacionales/vistas/integracion/bdimport/bdimport-integ';
 
 @Component({
   selector: 'app-bdimport',
@@ -73,12 +74,16 @@ export class BDImportComponent implements OnInit {
       const wsname = wb.SheetNames[0];
       const ws = wb.Sheets[wsname];
 
-      /* guarda la info - !!!!!falta quita las primeras 4 filas por formato de exportación de archivo de la CFI */
-      this.data = <any>(XLSX.utils.sheet_to_json(ws, {header: ["codigo","descripcion","importe"], range:4 }));
+      /* guarda la info - quitada las primeras 4 filas por formato de exportación de archivo de la CFI */
+      this.data = <any>(XLSX.utils.sheet_to_json(ws,{ header: ["codigo","descripcion","importe"],range: 4, rawNumbers:false }));
       console.log(this.data);
       
     };
     reader.readAsBinaryString(file);
+  }
+
+  guardarBD() {
+    console.log("agregar función POST luego de crear el backend, en data está la información, falta agregar la fecha")
   }
 
 }
