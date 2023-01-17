@@ -26,9 +26,9 @@ export class PlCompMensComponent implements OnInit {
   filterData1(formData){ 
 // Filtrar los datos del servicio según el rango de fechas especificado en el formulario
 const datosFiltrados1 = this.dataPlanta.filter(dato => 
-  dato.fecha >= formData.startDate1 && dato.fecha <= formData.endDate1);
+  dato.fecha >= formData.startDate1);
 const datosFiltrados2 = this.dataPlanta.filter(dato =>
-  dato.fecha >= formData.startDate2 && dato.fecha <= formData.endDate2);
+  dato.fecha <= formData.endDate1);
   
   const dFiltrado1 = datosFiltrados1.map(obj => ({
     ...obj,
