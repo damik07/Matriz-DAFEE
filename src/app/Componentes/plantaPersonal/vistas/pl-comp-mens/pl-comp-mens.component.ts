@@ -32,36 +32,36 @@ const datosFiltrados2 = this.dataPlanta.filter(dato =>
   
   const dFiltrado1 = datosFiltrados1.map(obj => ({
     ...obj,
-    importe1: obj.importe,
+    cantidad1: obj.cantidad,
     ...obj,
-    importe2: 0
+    cantidad2: 0
   }));
   
   const dfiltrado2 = datosFiltrados2.map(obj => ({
     ...obj,
-    importe1: 0,
+    cantidad1: 0,
     ...obj,
-    importe2: obj.importe
+    cantidad2: obj.cantidad
   }));
 
   const datosFiltrados = dFiltrado1.concat(dfiltrado2);
   
   
   this.permanente = datosFiltrados.reduce((acc, item) => {
-    const existingItem = acc.find(i => i.descripcion === item.descripcion);
+    const existingItem = acc.find(i => i.escalafon === item.escalafon);
         if (existingItem) {
-        existingItem.importe += item.importe;
-        existingItem.importe1 += item.importe1;
-        existingItem.importe2 += item.importe2;
+        existingItem.cantidad += item.cantidad;
+        existingItem.cantidad1 += item.cantidad1;
+        existingItem.cantidad2 += item.cantidad2;
       } else {
-        acc.push({descripcion: item.descripcion, importe: item.importe, importe1: item.importe1, importe2: item.importe2});
+        acc.push({escalafon: item.escalafon, cantidad: item.cantidad, cantidad1: item.cantidad1, cantidad2: item.cantidad2});
       }
       return acc;
     }, []);
   
 
-  this.total1 = this.permanente.reduce((acc, item) => acc + item.importe1,0);
-  this.total2 = this.permanente.reduce((acc, item) => acc + item.importe2,0);
+  this.total1 = this.permanente.reduce((acc, item) => acc + item.cantidad1,0);
+  this.total2 = this.permanente.reduce((acc, item) => acc + item.cantidad2,0);
 
 };
 
