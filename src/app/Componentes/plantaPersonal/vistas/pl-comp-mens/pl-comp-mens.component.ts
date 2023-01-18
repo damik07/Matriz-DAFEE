@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
 import { PlantaDePersonalService } from '../../../../Servicios/planta-de-personal.service';
 
+
+
 @Component({
   selector: 'app-pl-comp-mens',
   templateUrl: './pl-comp-mens.component.html',
@@ -20,6 +22,7 @@ export class PlCompMensComponent implements OnInit {
   suplente?:any[];
   total1Sup:any;
   total2Sup:any;
+  headers = ["Planta Permanente", "Planta Temporaria", "Planta Suplente"];
   
   
   constructor(private router:Router, private plService:PlantaDePersonalService) { 
@@ -117,7 +120,7 @@ export class PlCompMensComponent implements OnInit {
 
   };
 
-  name = 'Comparativo Integracion.xlsx';
+  name = 'Comparativo Planta de Personal.xlsx';
     exportToExcel(): void {
       let element = document.getElementById('comp-pl-mens');
       const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
@@ -127,6 +130,39 @@ export class PlCompMensComponent implements OnInit {
 
       XLSX.writeFile(book, this.name);
     }
+
+    multiTable(): void {
+      
+    
+      /* Callback invoked when the button is clicked */
+      //const xport = React.useCallback(async () => {
+        /* This function creates gap rows */
+        function create_gap_rows(ws, nrows) {
+          var ref = XLSX.utils.decode_range(ws["!ref"]);       // get original range
+          ref.e.r += nrows;                                    // add to ending row
+          ws["!ref"] = XLSX.utils.encode_range(ref);           // reassign row
+        }
+    
+        /* first table */
+        const ws = XLSX.utils.aoa_to_sheet([[this.headers[0]]]);
+        XLSX.utils.sheet_add_dom(ws, document.getElementById('table1'), {origin: -1});
+        create_gap_rows(ws, 1); // one row gap after first table
+    
+        /* second table */
+        XLSX.utils.sheet_add_aoa(ws, [[this.headers[1]]], {origin: -1});
+        XLSX.utils.sheet_add_dom(ws, document.getElementById('table2'), {origin: -1});
+        create_gap_rows(ws, 2); // two rows gap after second table
+    
+        /* third table */
+        XLSX.utils.sheet_add_aoa(ws, [[this.headers[2]]], {origin: -1});
+        XLSX.utils.sheet_add_dom(ws, document.getElementById('table3'), {origin: -1});
+    
+        /* create workbook and export */
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Hoja1");
+        XLSX.writeFile(wb, "Comparativo Planta de Personal.xlsx");
+      };
+    ;
   
 
 }
