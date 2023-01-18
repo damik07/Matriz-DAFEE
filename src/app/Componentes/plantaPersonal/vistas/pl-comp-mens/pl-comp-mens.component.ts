@@ -48,7 +48,7 @@ const datosFiltrados2 = this.dataPlanta.filter(dato =>
   
   
   this.permanente = datosFiltrados.reduce((acc, item) => {
-    const existingItem = acc.find(i => i.escalafon === item.escalafon);
+    const existingItem = acc.find(i => i.escalafon === item.escalafon && i.tipo_planta === item.tipo_planta);
         if (existingItem) {
         existingItem.cantidad += item.cantidad;
         existingItem.cantidad1 += item.cantidad1;
@@ -59,6 +59,7 @@ const datosFiltrados2 = this.dataPlanta.filter(dato =>
       return acc;
     }, []);
   
+    console.log(this.permanente)
 
   this.total1 = this.permanente.reduce((acc, item) => acc + item.cantidad1,0);
   this.total2 = this.permanente.reduce((acc, item) => acc + item.cantidad2,0);
