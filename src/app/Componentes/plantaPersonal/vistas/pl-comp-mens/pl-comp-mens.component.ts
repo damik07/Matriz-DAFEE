@@ -25,14 +25,14 @@ export class PlCompMensComponent implements OnInit {
 
   filterData1(formData){ 
 // Filtrar los datos del servicio según el rango de fechas especificado en el formulario
-const datosFiltrados1 = this.permanente.filter(dato => 
+const datosFiltrados1 = this.dataPlanta.filter(dato => 
   new Date(dato.fecha).getMonth() === new Date(formData.startDate1).getMonth()
 );
 const dfiltro1 = datosFiltrados1.filter(dato =>
   new Date(dato.fecha).getFullYear() === new Date(formData.startDate1).getFullYear()
 );
 
-const datosFiltrados2 = this.permanente.filter(dato => 
+const datosFiltrados2 = this.dataPlanta.filter(dato => 
   new Date(dato.fecha).getMonth() === new Date(formData.endDate1).getMonth()
 );
 const dfiltro2 = datosFiltrados2.filter(dato =>
@@ -54,8 +54,7 @@ const dfiltro2 = datosFiltrados2.filter(dato =>
   }));
 
   const datosFiltrados = dFiltrado1.concat(dfiltrado2);
-  console.log(datosFiltrados);
-  
+    
   
   this.permanente = datosFiltrados.reduce((acc, item) => {
     const existingItem = acc.find(i => i.escalafon === item.escalafon);
