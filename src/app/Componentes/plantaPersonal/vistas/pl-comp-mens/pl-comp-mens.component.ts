@@ -55,8 +55,9 @@ const dfiltro2 = datosFiltrados2.filter(dato =>
 
   const datosFiltrados = dFiltrado1.concat(dfiltrado2);
     
-  
-  this.permanente = datosFiltrados.reduce((acc, item) => {
+  const planta = datosFiltrados.filter(e => e.tipo_planta === 'Permanente');
+  this.permanente = planta.reduce((acc, item) => {
+    
     const existingItem = acc.find(i => i.escalafon === item.escalafon);
         if (existingItem) {
         existingItem.cantidad += item.cantidad;
