@@ -94,8 +94,8 @@ export class PlCompMensComponent implements OnInit {
       return acc;
     }, []);
 
-    this.total1Tem = this.permanente.reduce((acc, item) => acc + item.cantidad1, 0);
-    this.total2Tem = this.permanente.reduce((acc, item) => acc + item.cantidad2, 0);
+    this.total1Tem = this.temporario.reduce((acc, item) => acc + item.cantidad1, 0);
+    this.total2Tem = this.temporario.reduce((acc, item) => acc + item.cantidad2, 0);
 
     // Filtro para personal suplente quitando el personal de las empresas que no consolidan
     const plantaSup = datosFiltrados.filter(e => e.tipo_planta === 'Suplente' && e.tipo_organismo !== 'Empresas 2');
@@ -112,8 +112,8 @@ export class PlCompMensComponent implements OnInit {
       return acc;
     }, []);
 
-    this.total1Sup = this.permanente.reduce((acc, item) => acc + item.cantidad1, 0);
-    this.total2Sup = this.permanente.reduce((acc, item) => acc + item.cantidad2, 0);
+    this.total1Sup = this.suplente.reduce((acc, item) => acc + item.cantidad1, 0);
+    this.total2Sup = this.suplente.reduce((acc, item) => acc + item.cantidad2, 0);
 
   };
 
