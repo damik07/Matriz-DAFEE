@@ -25,19 +25,28 @@ export class PlCompMensComponent implements OnInit {
 
   filterData1(formData){ 
 // Filtrar los datos del servicio según el rango de fechas especificado en el formulario
-const datosFiltrados1 = this.dataPlanta.filter(dato => 
-  dato.fecha >= formData.startDate1);
-const datosFiltrados2 = this.dataPlanta.filter(dato =>
-  dato.fecha <= formData.endDate1);
+const datosFiltrados1 = this.permanente.filter(dato => 
+  new Date(dato.fecha).getMonth() === new Date(formData.startDate1).getMonth()
+);
+const dfiltro1 = datosFiltrados1.filter(dato =>
+  new Date(dato.fecha).getFullYear() === new Date(formData.startDate1).getFullYear()
+);
+
+const datosFiltrados2 = this.permanente.filter(dato => 
+  new Date(dato.fecha).getMonth() === new Date(formData.endDate1).getMonth()
+);
+const dfiltro2 = datosFiltrados2.filter(dato =>
+  new Date(dato.fecha).getFullYear() === new Date(formData.endDate1).getFullYear()
+);
   
-  const dFiltrado1 = datosFiltrados1.map(obj => ({
+  const dFiltrado1 = dfiltro1.map(obj => ({
     ...obj,
     cantidad1: obj.cantidad,
     ...obj,
     cantidad2: 0
   }));
   
-  const dfiltrado2 = datosFiltrados2.map(obj => ({
+  const dfiltrado2 = dfiltro2.map(obj => ({
     ...obj,
     cantidad1: 0,
     ...obj,
@@ -45,10 +54,11 @@ const datosFiltrados2 = this.dataPlanta.filter(dato =>
   }));
 
   const datosFiltrados = dFiltrado1.concat(dfiltrado2);
+  console.log(datosFiltrados);
   
   
   this.permanente = datosFiltrados.reduce((acc, item) => {
-    const existingItem = acc.find(i => i.escalafon === item.escalafon && i.tipo_planta === item.tipo_planta);
+    const existingItem = acc.find(i => i.escalafon === item.escalafon);
         if (existingItem) {
         existingItem.cantidad += item.cantidad;
         existingItem.cantidad1 += item.cantidad1;
