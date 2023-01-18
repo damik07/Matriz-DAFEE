@@ -22,9 +22,9 @@
 <hr>
 
 
-  <h3>Comparativo Planta de Personal</h3>
+  <h3 *ngIf="permanente">Comparativo Planta de Personal</h3>
   
-      <table class="table table-striped table-hover" id="table1">
+      <table class="table table-striped table-hover" id="table1" *ngIf="permanente">
         <caption>{{headers[0]}}</caption>
         <thead>
           <tr>
@@ -57,7 +57,7 @@
         </tfoot>
       </table>
  
-      <table class="table table-striped table-hover" id="table2">
+      <table class="table table-striped table-hover" id="table2" *ngIf="permanente">
         <caption>{{headers[1]}}</caption>
         <thead>
           <tr>
@@ -90,7 +90,7 @@
         </tfoot>
       </table>
  
-      <table class="table table-striped table-hover" id="table3">
+      <table class="table table-striped table-hover" id="table3" *ngIf="permanente">
         <caption>{{headers[2]}}</caption>
         <thead>
           <tr>
