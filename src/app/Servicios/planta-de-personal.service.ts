@@ -181,6 +181,18 @@ export class PlantaDePersonalService {
     "liquidacion": true,
     "aux_salud": "",
     "aux_cargo": "Cargo"
+  },
+  {
+    "fecha": "2022-10-01",
+    "DA": "801",
+    "descripcion": "ENERSA",
+    "cantidad": 150,
+    "tipo_organismo": "Empresas 2",
+    "escalafon": "Resto",
+    "tipo_planta": "Permanente",
+    "liquidacion": true,
+    "aux_salud": "",
+    "aux_cargo": "Cargo"
   }
   ]
 

@@ -55,7 +55,7 @@ export class PlCompMensComponent implements OnInit {
 
     const datosFiltrados = dFiltrado1.concat(dfiltrado2);
 
-    const plantaPer = datosFiltrados.filter(e => e.tipo_planta === 'Permanente');
+    const plantaPer = datosFiltrados.filter(e => e.tipo_planta === 'Permanente' && e.tipo_organismo !== 'Empresas 2');
     this.permanente = plantaPer.reduce((acc, item) => {
 
       const existingItem = acc.find(i => i.escalafon === item.escalafon);
