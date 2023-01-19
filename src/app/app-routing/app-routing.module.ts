@@ -10,6 +10,7 @@ import { BDImportComponent } from '../Componentes/Nacionales/vistas/integracion/
 import { PlCompMensComponent } from '../Componentes/plantaPersonal/vistas/pl-comp-mens/pl-comp-mens.component';
 import { PlCompErbesComponent } from '../Componentes/plantaPersonal/vistas/pl-comp-erbes/pl-comp-erbes.component';
 import { PlCompDaComponent } from '../Componentes/plantaPersonal/vistas/pl-comp-da/pl-comp-da.component';
+import { PlPlanilla6Component } from '../Componentes/plantaPersonal/vistas/pl-planilla6/pl-planilla6.component';
 
 const routes: Routes = [
   {path:'compIntegracion', component:CompIntegComponent, //canActivate:[GuardGuard]
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'plCompMens', component:PlCompMensComponent},
   {path:'plCompErbes', component:PlCompErbesComponent},
   {path:'plCompDA', component:PlCompDaComponent},
+  {path:'plPlanilla6', component:PlPlanilla6Component},
   //{path:'', redirectTo:'compIntegracion', pathMatch:'full'}
   
 ];

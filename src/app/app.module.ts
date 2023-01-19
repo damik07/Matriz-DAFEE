@@ -20,10 +20,11 @@ import { BDImportComponent } from './Componentes/Nacionales/vistas/integracion/b
 import { PlCompMensComponent } from './Componentes/plantaPersonal/vistas/pl-comp-mens/pl-comp-mens.component';
 import { PlCompErbesComponent } from './Componentes/plantaPersonal/vistas/pl-comp-erbes/pl-comp-erbes.component';
 import { PlCompDaComponent } from './Componentes/plantaPersonal/vistas/pl-comp-da/pl-comp-da.component';
+import { PlPlanilla6Component } from './Componentes/plantaPersonal/vistas/pl-planilla6/pl-planilla6.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule, NgxFileDropModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent, PlCompDaComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent, PlCompDaComponent, PlPlanilla6Component ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
