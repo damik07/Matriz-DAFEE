@@ -19,10 +19,11 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { BDImportComponent } from './Componentes/Nacionales/vistas/integracion/bdimport/bdimport.component';
 import { PlCompMensComponent } from './Componentes/plantaPersonal/vistas/pl-comp-mens/pl-comp-mens.component';
 import { PlCompErbesComponent } from './Componentes/plantaPersonal/vistas/pl-comp-erbes/pl-comp-erbes.component';
+import { PlCompDaComponent } from './Componentes/plantaPersonal/vistas/pl-comp-da/pl-comp-da.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule, NgxFileDropModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent, PlCompDaComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
