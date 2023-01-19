@@ -23,6 +23,7 @@
       <th>Descripción</th>
       <th>Filtro 1</th>
       <th>Filtro 2</th>
+      <th>Filtro 3</th>
       <th>Var. Absoluta</th>
       <th>Var. Relativa</th>
     </tr>
@@ -32,9 +33,11 @@
       <td>{{item.escalafon}}</td>
       <td>{{item.cantidad1.toFixed(2)}}</td>
       <td>{{item.cantidad2.toFixed(2)}}</td>
-      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
+      <td>{{item.cantidad3.toFixed(2)}}</td>
       <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
-        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+      item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+      <td>{{ item.cantidad3 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad3.toFixed(2)) /
+        item.cantidad3.toFixed(2) | percent:'.2') }}</td>
     </tr>
   </tbody>
   <tfoot>
@@ -42,10 +45,9 @@
       <th>TOTALES</th>
       <td>{{ total1Per.toFixed(2) }}</td>
       <td>{{ total2Per.toFixed(2) }}</td>
-      <td>{{ (total1Per - total2Per).toFixed(2) }}</td>
-      <td>{{ total2Per === 0 ? 0 : ((total1Per.toFixed(2) - total2Per.toFixed(2)) / total2Per.toFixed(2) | percent:'.2')
-        }}
-      </td>
+      <td>{{ total3Per.toFixed(2) }}</td>
+      <td>{{ total2Per === 0 ? 0 : ((total1Per.toFixed(2) - total2Per.toFixed(2)) / total2Per.toFixed(2) | percent:'.2') }}</td>
+      <td>{{ total3Per === 0 ? 0 : ((total1Per.toFixed(2) - total3Per.toFixed(2)) / total3Per.toFixed(2) | percent:'.2') }}</td>
     </tr>
   </tfoot>
 </table>
@@ -57,6 +59,7 @@
       <th>Descripción</th>
       <th>Filtro 1</th>
       <th>Filtro 2</th>
+      <th>Filtro 3</th>
       <th>Var. Absoluta</th>
       <th>Var. Relativa</th>
     </tr>
@@ -66,9 +69,11 @@
       <td>{{item.escalafon}}</td>
       <td>{{item.cantidad1.toFixed(2)}}</td>
       <td>{{item.cantidad2.toFixed(2)}}</td>
-      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
+      <td>{{item.cantidad3.toFixed(2)}}</td>
       <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
-        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+      item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+      <td>{{ item.cantidad3 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad3.toFixed(2)) /
+        item.cantidad3.toFixed(2) | percent:'.2') }}</td>
     </tr>
   </tbody>
   <tfoot>
@@ -76,10 +81,9 @@
       <th>TOTALES</th>
       <td>{{ total1Tem.toFixed(2) }}</td>
       <td>{{ total2Tem.toFixed(2) }}</td>
-      <td>{{ (total1Tem - total2Tem).toFixed(2) }}</td>
-      <td>{{ total2Tem === 0 ? 0 : ((total1Tem.toFixed(2) - total2Tem.toFixed(2)) / total2Tem.toFixed(2) | percent:'.2')
-        }}
-      </td>
+      <td>{{ total3Tem.toFixed(2) }}</td>
+      <td>{{ total2Tem === 0 ? 0 : ((total1Tem.toFixed(2) - total2Tem.toFixed(2)) / total2Tem.toFixed(2) | percent:'.2') }}</td>
+      <td>{{ total3Tem === 0 ? 0 : ((total1Tem.toFixed(2) - total3Tem.toFixed(2)) / total3Tem.toFixed(2) | percent:'.2') }}</td>
     </tr>
   </tfoot>
 </table>
@@ -91,6 +95,7 @@
       <th>Descripción</th>
       <th>Filtro 1</th>
       <th>Filtro 2</th>
+      <th>Filtro 3</th>
       <th>Var. Absoluta</th>
       <th>Var. Relativa</th>
     </tr>
@@ -100,9 +105,11 @@
       <td>{{item.escalafon}}</td>
       <td>{{item.cantidad1.toFixed(2)}}</td>
       <td>{{item.cantidad2.toFixed(2)}}</td>
-      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
+      <td>{{item.cantidad3.toFixed(2)}}</td>
       <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
-        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+      item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+      <td>{{ item.cantidad3 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad3.toFixed(2)) /
+        item.cantidad3.toFixed(2) | percent:'.2') }}</td>
     </tr>
   </tbody>
   <tfoot>
@@ -110,10 +117,9 @@
       <th>TOTALES</th>
       <td>{{ total1Sup.toFixed(2) }}</td>
       <td>{{ total2Sup.toFixed(2) }}</td>
-      <td>{{ (total1Sup - total2Sup).toFixed(2) }}</td>
-      <td>{{ total2Sup === 0 ? 0 : ((total1Sup.toFixed(2) - total2Sup.toFixed(2)) / total2Sup.toFixed(2) | percent:'.2')
-        }}
-      </td>
+      <td>{{ total3Sup.toFixed(2) }}</td>
+      <td>{{ total2Sup === 0 ? 0 : ((total1Sup.toFixed(2) - total2Sup.toFixed(2)) / total2Sup.toFixed(2) | percent:'.2') }}</td>
+      <td>{{ total3Sup === 0 ? 0 : ((total1Sup.toFixed(2) - total3Sup.toFixed(2)) / total3Sup.toFixed(2) | percent:'.2') }}</td>
     </tr>
   </tfoot>
 </table>
