@@ -1,0 +1,122 @@
+<h3>Comparativo Planta de Personal</h3>
+
+<form (ngSubmit)="filterData1(f.value)" #f="ngForm">
+  <div>
+    <div class="row">
+      <div class="col-4">
+        <label for="startDate1" class="form-label">Seleccionar mes</label>
+        <input class="form-control" type="month" name="startDate1" id="startDate1" ngModel>
+      </div>
+
+    </div>
+    <br>
+    <div class="col-2">
+      <button type="submit" class="btn btn-primary mb-3">Filtrar</button>
+    </div>
+  </div>
+</form>
+
+<hr><table class="table table-striped table-hover" id="table1" *ngIf="permanente">
+  <caption>{{headers[0]}}</caption>
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Filtro 1</th>
+      <th>Filtro 2</th>
+      <th>Var. Absoluta</th>
+      <th>Var. Relativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of permanente">
+      <td>{{item.escalafon}}</td>
+      <td>{{item.cantidad1.toFixed(2)}}</td>
+      <td>{{item.cantidad2.toFixed(2)}}</td>
+      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
+      <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
+        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>TOTALES</th>
+      <td>{{ total1Per.toFixed(2) }}</td>
+      <td>{{ total2Per.toFixed(2) }}</td>
+      <td>{{ (total1Per - total2Per).toFixed(2) }}</td>
+      <td>{{ total2Per === 0 ? 0 : ((total1Per.toFixed(2) - total2Per.toFixed(2)) / total2Per.toFixed(2) | percent:'.2')
+        }}
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<table class="table table-striped table-hover" id="table2" *ngIf="permanente">
+  <caption>{{headers[1]}}</caption>
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Filtro 1</th>
+      <th>Filtro 2</th>
+      <th>Var. Absoluta</th>
+      <th>Var. Relativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of temporario">
+      <td>{{item.escalafon}}</td>
+      <td>{{item.cantidad1.toFixed(2)}}</td>
+      <td>{{item.cantidad2.toFixed(2)}}</td>
+      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
+      <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
+        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>TOTALES</th>
+      <td>{{ total1Tem.toFixed(2) }}</td>
+      <td>{{ total2Tem.toFixed(2) }}</td>
+      <td>{{ (total1Tem - total2Tem).toFixed(2) }}</td>
+      <td>{{ total2Tem === 0 ? 0 : ((total1Tem.toFixed(2) - total2Tem.toFixed(2)) / total2Tem.toFixed(2) | percent:'.2')
+        }}
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<table class="table table-striped table-hover" id="table3" *ngIf="permanente">
+  <caption>{{headers[2]}}</caption>
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Filtro 1</th>
+      <th>Filtro 2</th>
+      <th>Var. Absoluta</th>
+      <th>Var. Relativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of suplente">
+      <td>{{item.escalafon}}</td>
+      <td>{{item.cantidad1.toFixed(2)}}</td>
+      <td>{{item.cantidad2.toFixed(2)}}</td>
+      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
+      <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
+        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>TOTALES</th>
+      <td>{{ total1Sup.toFixed(2) }}</td>
+      <td>{{ total2Sup.toFixed(2) }}</td>
+      <td>{{ (total1Sup - total2Sup).toFixed(2) }}</td>
+      <td>{{ total2Sup === 0 ? 0 : ((total1Sup.toFixed(2) - total2Sup.toFixed(2)) / total2Sup.toFixed(2) | percent:'.2')
+        }}
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<hr>
+<button (click)="multiTable()" class="btn btn-primary mb-3" *ngIf="permanente">Exportar</button>
