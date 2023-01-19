@@ -75,14 +75,15 @@ export class PlCompDaComponent implements OnInit {
       (e) => e.tipo_planta === 'Permanente' && e.tipo_organismo !== 'Empresas 2'
     );
     this.permanente = plantaPer.reduce((acc, item) => {
-      const existingItem = acc.find((i) => i.escalafon === item.escalafon);
+      const existingItem = acc.find((i) => i.descripcion === item.descripcion);
       if (existingItem) {
         existingItem.cantidad += item.cantidad;
         existingItem.cantidad1 += item.cantidad1;
         existingItem.cantidad2 += item.cantidad2;
       } else {
         acc.push({
-          escalafon: item.escalafon,
+          DA: item.DA,
+          descripcion: item.descripcion,
           cantidad: item.cantidad,
           cantidad1: item.cantidad1,
           cantidad2: item.cantidad2,
@@ -105,14 +106,15 @@ export class PlCompDaComponent implements OnInit {
       (e) => e.tipo_planta === 'Temporario' && e.tipo_organismo !== 'Empresas 2'
     );
     this.temporario = plantaTem.reduce((acc, item) => {
-      const existingItem = acc.find((i) => i.escalafon === item.escalafon);
+      const existingItem = acc.find((i) => i.descripcion === item.descripcion);
       if (existingItem) {
         existingItem.cantidad += item.cantidad;
         existingItem.cantidad1 += item.cantidad1;
         existingItem.cantidad2 += item.cantidad2;
       } else {
         acc.push({
-          escalafon: item.escalafon,
+          DA: item.DA,
+          descripcion: item.descripcion,
           cantidad: item.cantidad,
           cantidad1: item.cantidad1,
           cantidad2: item.cantidad2,
@@ -135,14 +137,15 @@ export class PlCompDaComponent implements OnInit {
       (e) => e.tipo_planta === 'Suplente' && e.tipo_organismo !== 'Empresas 2'
     );
     this.suplente = plantaSup.reduce((acc, item) => {
-      const existingItem = acc.find((i) => i.escalafon === item.escalafon);
+      const existingItem = acc.find((i) => i.descripcion === item.descripcion);
       if (existingItem) {
         existingItem.cantidad += item.cantidad;
         existingItem.cantidad1 += item.cantidad1;
         existingItem.cantidad2 += item.cantidad2;
       } else {
         acc.push({
-          escalafon: item.escalafon,
+          DA: item.DA,
+          descripcion: item.descripcion,
           cantidad: item.cantidad,
           cantidad1: item.cantidad1,
           cantidad2: item.cantidad2,

@@ -1,4 +1,4 @@
-<h3>Comparativo Planta de Personal</h3>
+<h3>Comparativo Planta de Personal por DA</h3>
 
 <form (ngSubmit)="filterData1(f.value)" #f="ngForm">
   <div>
@@ -29,7 +29,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of permanente">
-      <td>{{item.escalafon}}</td>
+      <td>{{item.descripcion}}</td>
       <td>{{item.cantidad1.toFixed(2)}}</td>
       <td>{{item.cantidad2.toFixed(2)}}</td>
       <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
@@ -63,7 +63,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of temporario">
-      <td>{{item.escalafon}}</td>
+      <td>{{item.descripcion}}</td>
       <td>{{item.cantidad1.toFixed(2)}}</td>
       <td>{{item.cantidad2.toFixed(2)}}</td>
       <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
@@ -97,7 +97,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of suplente">
-      <td>{{item.escalafon}}</td>
+      <td>{{item.descripcion}}</td>
       <td>{{item.cantidad1.toFixed(2)}}</td>
       <td>{{item.cantidad2.toFixed(2)}}</td>
       <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
