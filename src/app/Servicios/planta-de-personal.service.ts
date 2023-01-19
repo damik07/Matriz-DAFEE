@@ -193,7 +193,19 @@ export class PlantaDePersonalService {
     "liquidacion": true,
     "aux_salud": "",
     "aux_cargo": "Cargo"
-  }
+  },
+  {
+    "fecha": "2023-09-01",
+    "DA": "954",
+    "descripcion": "Gobernación",
+    "cantidad": 50,
+    "tipo_organismo": "Administración Central",
+    "escalafon": "General",
+    "tipo_planta": "Permanente",
+    "liquidacion": true,
+    "aux_salud": "",
+    "aux_cargo": "Cargo"
+  },
   ]
 
 }

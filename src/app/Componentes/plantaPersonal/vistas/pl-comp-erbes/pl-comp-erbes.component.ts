@@ -235,6 +235,6 @@ export class PlCompErbesComponent implements OnInit {
     /* creación del libro y exportación */
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Hoja1');
-    XLSX.writeFile(wb, 'Comparativo Planta de Personal.xlsx');
+    XLSX.writeFile(wb, 'Comparativo Planta de Personal Erbes.xlsx');
   }
 }
