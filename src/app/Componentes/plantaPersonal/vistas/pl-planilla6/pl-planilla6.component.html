@@ -40,10 +40,10 @@
   <tfoot>
     <tr>
       <th>TOTALES</th>
-      <td>{{ total1Per.toFixed(2) }}</td>
-      <td>{{ total2Per.toFixed(2) }}</td>
-      <td>{{ (total1Per - total2Per).toFixed(2) }}</td>
-      <td>{{ total2Per === 0 ? 0 : ((total1Per.toFixed(2) - total2Per.toFixed(2)) / total2Per.toFixed(2) | percent:'.2')
+      <td>{{ total1Per[0].toFixed(2) }}</td>
+      <td>{{ total1Per[1].toFixed(2) }}</td>
+      <td>{{ (total1Per[0] - total1Per[1]).toFixed(2) }}</td>
+      <td>{{ total1Per[1] === 0 ? 0 : ((total1Per[0].toFixed(2) - total1Per[1].toFixed(2)) / total1Per[1].toFixed(2) | percent:'.2')
         }}
       </td>
     </tr>
@@ -74,10 +74,10 @@
   <tfoot>
     <tr>
       <th>TOTALES</th>
-      <td>{{ total1Tem.toFixed(2) }}</td>
-      <td>{{ total2Tem.toFixed(2) }}</td>
-      <td>{{ (total1Tem - total2Tem).toFixed(2) }}</td>
-      <td>{{ total2Tem === 0 ? 0 : ((total1Tem.toFixed(2) - total2Tem.toFixed(2)) / total2Tem.toFixed(2) | percent:'.2')
+      <td>{{ total1Tem[0].toFixed(2) }}</td>
+      <td>{{ total1Tem[1].toFixed(2) }}</td>
+      <td>{{ (total1Tem[0] - total1Tem[1]).toFixed(2) }}</td>
+      <td>{{ total1Tem[1] === 0 ? 0 : ((total1Tem[0].toFixed(2) - total1Tem[1].toFixed(2)) / total1Tem[1].toFixed(2) | percent:'.2')
         }}
       </td>
     </tr>
@@ -108,10 +108,10 @@
   <tfoot>
     <tr>
       <th>TOTALES</th>
-      <td>{{ total1Sup.toFixed(2) }}</td>
-      <td>{{ total2Sup.toFixed(2) }}</td>
-      <td>{{ (total1Sup - total2Sup).toFixed(2) }}</td>
-      <td>{{ total2Sup === 0 ? 0 : ((total1Sup.toFixed(2) - total2Sup.toFixed(2)) / total2Sup.toFixed(2) | percent:'.2')
+      <td>{{ total1Sup[0].toFixed(2) }}</td>
+      <td>{{ total1Sup[1].toFixed(2) }}</td>
+      <td>{{ (total1Sup[0] - total1Sup[1]).toFixed(2) }}</td>
+      <td>{{ total1Sup[1] === 0 ? 0 : ((total1Sup[0].toFixed(2) - total1Sup[1].toFixed(2)) / total1Sup[1].toFixed(2) | percent:'.2')
         }}
       </td>
     </tr>

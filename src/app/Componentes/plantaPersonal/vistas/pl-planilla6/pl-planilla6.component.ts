@@ -11,14 +11,14 @@ import * as XLSX from 'xlsx';
 export class PlPlanilla6Component implements OnInit {
   dataPlanta?: any[];
   permanente?: any[];
-  total1Per: any;
-  total2Per: any;
+  total1Per: any[];
+  
   temporario?: any[];
-  total1Tem: any;
-  total2Tem: any;
+  total1Tem: any[];
+
   suplente?: any[];
-  total1Sup: any;
-  total2Sup: any;
+  total1Sup: any[];
+  
   headers = ['Planta Permanente', 'Planta Temporaria', 'Planta Suplente'];
 
   constructor(private router: Router, private plService: PlantaDePersonalService) {
@@ -509,10 +509,9 @@ export class PlPlanilla6Component implements OnInit {
       (acc, item) => acc + item.cantDocHor,
       0
     );
-
-    this.total1Per = total1General.concat(total1Policia, total1SerPen, total1Medicos, total1Enfermeria, total1Justicia, total1Vial, total1Superior, total1Legislativo, total1Resto, total1DocCar, total1DocHor);
-    console.log(this.total1Per);
     
+    this.total1Per = [total1General, total1Policia, total1SerPen, total1Medicos, total1Enfermeria, total1Justicia, total1Vial, total1Superior, total1Legislativo, total1Resto, total1DocCar, total1DocHor];
+        
 
     // Filtro para personal temporario quitando el personal de las empresas que no consolidan
     const plantaTem = datosFiltrados.filter(
@@ -555,14 +554,56 @@ export class PlPlanilla6Component implements OnInit {
       return acc;
     }, []);
 
-    this.total1Tem = this.temporario.reduce(
-      (acc, item) => acc + item.cantidad1,
+    const total1General1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantGeneral,
       0
     );
-    this.total2Tem = this.temporario.reduce(
-      (acc, item) => acc + item.cantidad2,
+    const total1Policia1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantPolicia,
       0
     );
+    const total1SerPen1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantSerPen,
+      0
+    );
+    const total1Medicos1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantMedicos,
+      0
+    );
+    const total1Enfermeria1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantEnfermeria,
+      0
+    );
+    const total1Justicia1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantJusticia,
+      0
+    );
+    const total1Vial1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantVial,
+      0
+    );
+    const total1Superior1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantSuperior,
+      0
+    );
+    const total1Legislativo1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantLegislativo,
+      0
+    );
+    const total1Resto1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantResto,
+      0
+    );
+    const total1DocCar1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantDocCar,
+      0
+    );
+    const total1DocHor1 = this.temporario.reduce(
+      (acc, item) => acc + item.cantDocHor,
+      0
+    );
+    
+    this.total1Tem = [total1General1, total1Policia1, total1SerPen1, total1Medicos1, total1Enfermeria1, total1Justicia1, total1Vial1, total1Superior1, total1Legislativo1, total1Resto1, total1DocCar1, total1DocHor1];
 
     // Filtro para personal suplente quitando el personal de las empresas que no consolidan
     const plantaSup = datosFiltrados.filter(
@@ -605,14 +646,58 @@ export class PlPlanilla6Component implements OnInit {
       return acc;
     }, []);
 
-    this.total1Sup = this.suplente.reduce(
-      (acc, item) => acc + item.cantidad1,
+    const total1General2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantGeneral,
       0
     );
-    this.total2Sup = this.suplente.reduce(
-      (acc, item) => acc + item.cantidad2,
+    const total1Policia2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantPolicia,
       0
     );
+    const total1SerPen2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantSerPen,
+      0
+    );
+    const total1Medicos2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantMedicos,
+      0
+    );
+    const total1Enfermeria2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantEnfermeria,
+      0
+    );
+    const total1Justicia2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantJusticia,
+      0
+    );
+    const total1Vial2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantVial,
+      0
+    );
+    const total1Superior2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantSuperior,
+      0
+    );
+    const total1Legislativo2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantLegislativo,
+      0
+    );
+    const total1Resto2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantResto,
+      0
+    );
+    const total1DocCar2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantDocCar,
+      0
+    );
+    const total1DocHor2 = this.suplente.reduce(
+      (acc, item) => acc + item.cantDocHor,
+      0
+    );
+    
+    this.total1Sup = [total1General2, total1Policia2, total1SerPen2, total1Medicos2, total1Enfermeria2, total1Justicia2, total1Vial2, total1Superior2, total1Legislativo2, total1Resto2, total1DocCar2, total1DocHor2];
+
+    //FIN DE FILTRO
   }
 
   multiTable(): void {
