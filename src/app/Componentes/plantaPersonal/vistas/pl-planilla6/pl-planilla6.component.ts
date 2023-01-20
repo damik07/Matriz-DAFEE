@@ -460,14 +460,59 @@ export class PlPlanilla6Component implements OnInit {
       return acc;
     }, []);
 
-    this.total1Per = this.permanente.reduce(
-      (acc, item) => acc + item.cantidad1,
+    
+    const total1General = this.permanente.reduce(
+      (acc, item) => acc + item.cantGeneral,
       0
     );
-    this.total2Per = this.permanente.reduce(
-      (acc, item) => acc + item.cantidad2,
+    const total1Policia = this.permanente.reduce(
+      (acc, item) => acc + item.cantPolicia,
       0
     );
+    const total1SerPen = this.permanente.reduce(
+      (acc, item) => acc + item.cantSerPen,
+      0
+    );
+    const total1Medicos = this.permanente.reduce(
+      (acc, item) => acc + item.cantMedicos,
+      0
+    );
+    const total1Enfermeria = this.permanente.reduce(
+      (acc, item) => acc + item.cantEnfermeria,
+      0
+    );
+    const total1Justicia = this.permanente.reduce(
+      (acc, item) => acc + item.cantJusticia,
+      0
+    );
+    const total1Vial = this.permanente.reduce(
+      (acc, item) => acc + item.cantVial,
+      0
+    );
+    const total1Superior = this.permanente.reduce(
+      (acc, item) => acc + item.cantSuperior,
+      0
+    );
+    const total1Legislativo = this.permanente.reduce(
+      (acc, item) => acc + item.cantLegislativo,
+      0
+    );
+    const total1Resto = this.permanente.reduce(
+      (acc, item) => acc + item.cantResto,
+      0
+    );
+    const total1DocCar = this.permanente.reduce(
+      (acc, item) => acc + item.cantDocCar,
+      0
+    );
+    const total1DocHor = this.permanente.reduce(
+      (acc, item) => acc + item.cantDocHor,
+      0
+    );
+
+    this.total1Per = total1General.concat(total1Policia, total1SerPen, total1Medicos, total1Enfermeria, total1Justicia, total1Vial, total1Superior, total1Legislativo, total1Resto, total1DocCar, total1DocHor);
+    console.log(this.total1Per);
+    
 
     // Filtro para personal temporario quitando el personal de las empresas que no consolidan
     const plantaTem = datosFiltrados.filter(
