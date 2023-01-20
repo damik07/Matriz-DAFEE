@@ -41,17 +41,58 @@ export class PlPlanilla6Component implements OnInit {
         new Date(formData.startDate1).getFullYear()
     );
 
-    const datosFiltrados2 = this.dataPlanta.filter(
+    //filtro por escalafón
+    const escGeneral = dfiltro1.filter(
       (dato) =>
-        new Date(dato.fecha).getMonth() ===
-        new Date(formData.startDate1).getMonth()
+        dato.escalafon === 'General'        
     );
-    const dfiltro2 = datosFiltrados2.filter(
+    const escPolicia = dfiltro1.filter(
       (dato) =>
-        new Date(dato.fecha).getFullYear() ===
-        new Date(formData.startDate1).getFullYear() - 1
+        dato.DA === '956' && dato.escalafon === 'Seguridad'        
+    );
+    const escSerPen = dfiltro1.filter(
+      (dato) =>
+        dato.DA === '976' && dato.escalafon === 'Seguridad'        
+    );
+    const escMed = dfiltro1.filter(
+      (dato) =>
+        dato.aux_salud === 'Médicos' && dato.escalafon === 'Salud'        
+    );
+    const escEnf = dfiltro1.filter(
+      (dato) =>
+        dato.aux_salud === 'Enfermeros' && dato.escalafon === 'Salud'        
+    );
+    const escJusticia = dfiltro1.filter(
+      (dato) =>
+        dato.escalafon === 'Justicia'        
+    );
+    const escVial = dfiltro1.filter(
+      (dato) =>
+        dato.escalafon === 'Vial'        
+    );
+    const escSuperior = dfiltro1.filter(
+      (dato) =>
+        dato.escalafon === 'Autoridades Superiores'        
+    );
+    const escLegislativo = dfiltro1.filter(
+      (dato) =>
+        dato.escalafon === 'Legislativo'        
+    );
+    const escResto = dfiltro1.filter(
+      (dato) =>
+        dato.escalafon === 'Resto'        
+    );
+    const escDocCar = dfiltro1.filter(
+      (dato) =>
+        dato.escalafon === 'Docente' && dato.aux_cargo === 'Cargo'        
+    );
+    const escDocHor = dfiltro1.filter(
+      (dato) =>
+        dato.escalafon === 'Docente' && dato.aux_cargo === 'Hs en cargo'        
     );
 
+
+    //incorporación de cantidades en cada filtro de escalafón
     const dFiltrado1 = dfiltro1.map((obj) => ({
       ...obj,
       cantidad1: obj.cantidad,
@@ -59,7 +100,7 @@ export class PlPlanilla6Component implements OnInit {
       cantidad2: 0,
     }));
 
-    const dfiltrado2 = dfiltro2.map((obj) => ({
+    const dfiltrado2 = escGeneral.map((obj) => ({
       ...obj,
       cantidad1: 0,
       ...obj,
