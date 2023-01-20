@@ -93,21 +93,331 @@ export class PlPlanilla6Component implements OnInit {
 
 
     //incorporación de cantidades en cada filtro de escalafón
-    const dFiltrado1 = dfiltro1.map((obj) => ({
+    const filtroGeneral = escGeneral.map((obj) => ({
       ...obj,
-      cantidad1: obj.cantidad,
+      cantGeneral: obj.cantidad,
       ...obj,
-      cantidad2: 0,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
     }));
 
-    const dfiltrado2 = escGeneral.map((obj) => ({
+    const filtroPolicia = escPolicia.map((obj) => ({
       ...obj,
-      cantidad1: 0,
+      cantGeneral: 0,
       ...obj,
-      cantidad2: obj.cantidad,
+      cantPolicia: obj.cantidad,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
     }));
 
-    const datosFiltrados = dFiltrado1.concat(dfiltrado2);
+    const filtroSerPen = escSerPen.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: obj.cantidad,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroMedicos = escMed.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: obj.cantidad,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroEnfermeria = escEnf.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: obj.cantidad,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroJusticia = escJusticia.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: obj.cantidad,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroVial = escVial.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: obj.cantidad,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroSuperior = escSuperior.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: obj.cantidad,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroLegislativo = escLegislativo.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: obj.cantidad,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroResto = escResto.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: obj.cantidad,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroDocCar = escDocCar.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: obj.cantidad,
+      ...obj,
+      cantDocHor: 0,
+    }));
+
+    const filtroDocHor = escDocHor.map((obj) => ({
+      ...obj,
+      cantGeneral: 0,
+      ...obj,
+      cantPolicia: 0,
+      ...obj,
+      cantSerPen: 0,
+      ...obj,
+      cantMedicos: 0,
+      ...obj,
+      cantEnfermeria: 0,
+      ...obj,
+      cantJusticia: 0,
+      ...obj,
+      cantVial: 0,
+      ...obj,
+      cantSuperior: 0,
+      ...obj,
+      cantLegislativo: 0,
+      ...obj,
+      cantResto: 0,
+      ...obj,
+      cantDocCar: 0,
+      ...obj,
+      cantDocHor: obj.cantidad,
+    }));
+
+    const datosFiltrados = filtroGeneral.concat(filtroPolicia, filtroSerPen, filtroMedicos, filtroEnfermeria, filtroJusticia, filtroVial, filtroSuperior, filtroLegislativo, filtroResto, filtroDocCar, filtroDocHor);
 
     // Filtro para personal permanente quitando el personal de las empresas que no consolidan
     const plantaPer = datosFiltrados.filter(
@@ -116,16 +426,35 @@ export class PlPlanilla6Component implements OnInit {
     this.permanente = plantaPer.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.descripcion === item.descripcion);
       if (existingItem) {
-        existingItem.cantidad += item.cantidad;
-        existingItem.cantidad1 += item.cantidad1;
-        existingItem.cantidad2 += item.cantidad2;
+        existingItem.cantGeneral += item.cantGeneral;
+        existingItem.cantPolicia += item.cantPolicia;
+        existingItem.cantSerPen += item.cantSerPen;
+        existingItem.cantMedicos += item.cantMedicos;
+        existingItem.cantEnfermeria += item.cantEnfermeria;
+        existingItem.cantJusticia += item.cantJusticia;
+        existingItem.cantVial += item.cantVial;
+        existingItem.cantSuperior += item.cantSuperior;
+        existingItem.cantLegislativo += item.cantLegislativo;
+        existingItem.cantResto += item.cantResto;
+        existingItem.cantDocCar += item.cantDocCar;
+        existingItem.cantDocHor += item.cantDocHor;
+
       } else {
         acc.push({
           DA: item.DA,
           descripcion: item.descripcion,
-          cantidad: item.cantidad,
-          cantidad1: item.cantidad1,
-          cantidad2: item.cantidad2,
+          cantGeneral: item.cantGeneral,
+          cantPolicia: item.cantPolicia,
+          cantSerPen: item.cantSerPen,
+          cantMedicos: item.cantMedicos,
+          cantEnfermeria: item.cantEnfermeria,
+          cantJusticia: item.cantJusticia,
+          cantVial: item.cantVial,
+          cantSuperior: item.cantSuperior,
+          cantLegislativo: item.cantLegislativo,
+          cantResto: item.cantResto,
+          cantDocCar: item.cantDocCar,
+          cantDocHor: item.cantDocHor,
         });
       }
       return acc;
@@ -147,16 +476,35 @@ export class PlPlanilla6Component implements OnInit {
     this.temporario = plantaTem.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.descripcion === item.descripcion);
       if (existingItem) {
-        existingItem.cantidad += item.cantidad;
-        existingItem.cantidad1 += item.cantidad1;
-        existingItem.cantidad2 += item.cantidad2;
+        existingItem.cantGeneral += item.cantGeneral;
+        existingItem.cantPolicia += item.cantPolicia;
+        existingItem.cantSerPen += item.cantSerPen;
+        existingItem.cantMedicos += item.cantMedicos;
+        existingItem.cantEnfermeria += item.cantEnfermeria;
+        existingItem.cantJusticia += item.cantJusticia;
+        existingItem.cantVial += item.cantVial;
+        existingItem.cantSuperior += item.cantSuperior;
+        existingItem.cantLegislativo += item.cantLegislativo;
+        existingItem.cantResto += item.cantResto;
+        existingItem.cantDocCar += item.cantDocCar;
+        existingItem.cantDocHor += item.cantDocHor;
+
       } else {
         acc.push({
           DA: item.DA,
           descripcion: item.descripcion,
-          cantidad: item.cantidad,
-          cantidad1: item.cantidad1,
-          cantidad2: item.cantidad2,
+          cantGeneral: item.cantGeneral,
+          cantPolicia: item.cantPolicia,
+          cantSerPen: item.cantSerPen,
+          cantMedicos: item.cantMedicos,
+          cantEnfermeria: item.cantEnfermeria,
+          cantJusticia: item.cantJusticia,
+          cantVial: item.cantVial,
+          cantSuperior: item.cantSuperior,
+          cantLegislativo: item.cantLegislativo,
+          cantResto: item.cantResto,
+          cantDocCar: item.cantDocCar,
+          cantDocHor: item.cantDocHor,
         });
       }
       return acc;
@@ -178,16 +526,35 @@ export class PlPlanilla6Component implements OnInit {
     this.suplente = plantaSup.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.descripcion === item.descripcion);
       if (existingItem) {
-        existingItem.cantidad += item.cantidad;
-        existingItem.cantidad1 += item.cantidad1;
-        existingItem.cantidad2 += item.cantidad2;
+        existingItem.cantGeneral += item.cantGeneral;
+        existingItem.cantPolicia += item.cantPolicia;
+        existingItem.cantSerPen += item.cantSerPen;
+        existingItem.cantMedicos += item.cantMedicos;
+        existingItem.cantEnfermeria += item.cantEnfermeria;
+        existingItem.cantJusticia += item.cantJusticia;
+        existingItem.cantVial += item.cantVial;
+        existingItem.cantSuperior += item.cantSuperior;
+        existingItem.cantLegislativo += item.cantLegislativo;
+        existingItem.cantResto += item.cantResto;
+        existingItem.cantDocCar += item.cantDocCar;
+        existingItem.cantDocHor += item.cantDocHor;
+
       } else {
         acc.push({
           DA: item.DA,
           descripcion: item.descripcion,
-          cantidad: item.cantidad,
-          cantidad1: item.cantidad1,
-          cantidad2: item.cantidad2,
+          cantGeneral: item.cantGeneral,
+          cantPolicia: item.cantPolicia,
+          cantSerPen: item.cantSerPen,
+          cantMedicos: item.cantMedicos,
+          cantEnfermeria: item.cantEnfermeria,
+          cantJusticia: item.cantJusticia,
+          cantVial: item.cantVial,
+          cantSuperior: item.cantSuperior,
+          cantLegislativo: item.cantLegislativo,
+          cantResto: item.cantResto,
+          cantDocCar: item.cantDocCar,
+          cantDocHor: item.cantDocHor,
         });
       }
       return acc;
