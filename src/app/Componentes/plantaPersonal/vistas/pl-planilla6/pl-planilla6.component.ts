@@ -12,13 +12,16 @@ export class PlPlanilla6Component implements OnInit {
   dataPlanta?: any[];
   permanente?: any[];
   total1Per: any[];
-  
+  admiPubNoFinPer: any[];
+  instEmpYOtrosPer: any[];
   temporario?: any[];
   total1Tem: any[];
-
+  admiPubNoFinTem: any[];
+  instEmpYOtrosTem: any[];
   suplente?: any[];
   total1Sup: any[];
-  
+  admiPubNoFinSup: any[];
+  instEmpYOtrosSup: any[];
   headers = ['Planta Permanente', 'Planta Temporaria', 'Planta Suplente'];
 
   constructor(private router: Router, private plService: PlantaDePersonalService) {
@@ -443,6 +446,7 @@ export class PlPlanilla6Component implements OnInit {
         acc.push({
           DA: item.DA,
           descripcion: item.descripcion,
+          tipo_organismo: item.tipo_organismo,
           cantGeneral: item.cantGeneral,
           cantPolicia: item.cantPolicia,
           cantSerPen: item.cantSerPen,
@@ -537,6 +541,7 @@ export class PlPlanilla6Component implements OnInit {
         acc.push({
           DA: item.DA,
           descripcion: item.descripcion,
+          tipo_organismo: item.tipo_organismo,
           cantGeneral: item.cantGeneral,
           cantPolicia: item.cantPolicia,
           cantSerPen: item.cantSerPen,
@@ -629,6 +634,7 @@ export class PlPlanilla6Component implements OnInit {
         acc.push({
           DA: item.DA,
           descripcion: item.descripcion,
+          tipo_organismo: item.tipo_organismo,
           cantGeneral: item.cantGeneral,
           cantPolicia: item.cantPolicia,
           cantSerPen: item.cantSerPen,
