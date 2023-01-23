@@ -1084,6 +1084,193 @@ export class PlPlanilla6Component implements OnInit {
     
     this.total1Sup = [total1General2, total1Policia2, total1SerPen2, total1Medicos2, total1Enfermeria2, total1Justicia2, total1Vial2, total1Superior2, total1Legislativo2, total1Resto2, total1DocCar2, total1DocHor2];
 
+    //Suplente en admi y sector publico
+
+    const filtroAdmiNoFinSup = this.suplente.filter(dato => {
+      dato.tipo_organismo !== "Institutos de obra social" && dato.tipo_organismo !== "Empresas"
+    });
+
+    this.admiPubNoFinSup = filtroAdmiNoFinSup.reduce((acc, item) => {
+      const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
+      if (existingItem) {
+        existingItem.cantGeneral += item.cantGeneral;
+        existingItem.cantPolicia += item.cantPolicia;
+        existingItem.cantSerPen += item.cantSerPen;
+        existingItem.cantMedicos += item.cantMedicos;
+        existingItem.cantEnfermeria += item.cantEnfermeria;
+        existingItem.cantJusticia += item.cantJusticia;
+        existingItem.cantVial += item.cantVial;
+        existingItem.cantSuperior += item.cantSuperior;
+        existingItem.cantLegislativo += item.cantLegislativo;
+        existingItem.cantResto += item.cantResto;
+        existingItem.cantDocCar += item.cantDocCar;
+        existingItem.cantDocHor += item.cantDocHor;
+
+      } else {
+        acc.push({
+          
+          tipo_organismo: item.tipo_organismo,
+          cantGeneral: item.cantGeneral,
+          cantPolicia: item.cantPolicia,
+          cantSerPen: item.cantSerPen,
+          cantMedicos: item.cantMedicos,
+          cantEnfermeria: item.cantEnfermeria,
+          cantJusticia: item.cantJusticia,
+          cantVial: item.cantVial,
+          cantSuperior: item.cantSuperior,
+          cantLegislativo: item.cantLegislativo,
+          cantResto: item.cantResto,
+          cantDocCar: item.cantDocCar,
+          cantDocHor: item.cantDocHor,
+        });
+      }
+      return acc;
+    }, []);
+
+    const total1General21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantGeneral,
+      0
+    );
+    const total1Policia21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantPolicia,
+      0
+    );
+    const total1SerPen21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantSerPen,
+      0
+    );
+    const total1Medicos21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantMedicos,
+      0
+    );
+    const total1Enfermeria21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantEnfermeria,
+      0
+    );
+    const total1Justicia21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantJusticia,
+      0
+    );
+    const total1Vial21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantVial,
+      0
+    );
+    const total1Superior21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantSuperior,
+      0
+    );
+    const total1Legislativo21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantLegislativo,
+      0
+    );
+    const total1Resto21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantResto,
+      0
+    );
+    const total1DocCar21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantDocCar,
+      0
+    );
+    const total1DocHor21 = this.admiPubNoFinSup.reduce(
+      (acc, item) => acc + item.cantDocHor,
+      0
+    );
+    
+    this.totalAdmiPubSup = [total1General21, total1Policia21, total1SerPen21, total1Medicos21, total1Enfermeria21, total1Justicia21, total1Vial21, total1Superior21, total1Legislativo21, total1Resto21, total1DocCar21, total1DocHor21];
+
+
+    const filtroInsEmpSup = this.suplente.filter(dato => {
+      dato.tipo_organismo === "Institutos de obra social" && dato.tipo_organismo === "Empresas"
+    });
+
+    this.instEmpYOtrosSup = filtroInsEmpSup.reduce((acc, item) => {
+      const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
+      if (existingItem) {
+        existingItem.cantGeneral += item.cantGeneral;
+        existingItem.cantPolicia += item.cantPolicia;
+        existingItem.cantSerPen += item.cantSerPen;
+        existingItem.cantMedicos += item.cantMedicos;
+        existingItem.cantEnfermeria += item.cantEnfermeria;
+        existingItem.cantJusticia += item.cantJusticia;
+        existingItem.cantVial += item.cantVial;
+        existingItem.cantSuperior += item.cantSuperior;
+        existingItem.cantLegislativo += item.cantLegislativo;
+        existingItem.cantResto += item.cantResto;
+        existingItem.cantDocCar += item.cantDocCar;
+        existingItem.cantDocHor += item.cantDocHor;
+
+      } else {
+        acc.push({
+          
+          tipo_organismo: item.tipo_organismo,
+          cantGeneral: item.cantGeneral,
+          cantPolicia: item.cantPolicia,
+          cantSerPen: item.cantSerPen,
+          cantMedicos: item.cantMedicos,
+          cantEnfermeria: item.cantEnfermeria,
+          cantJusticia: item.cantJusticia,
+          cantVial: item.cantVial,
+          cantSuperior: item.cantSuperior,
+          cantLegislativo: item.cantLegislativo,
+          cantResto: item.cantResto,
+          cantDocCar: item.cantDocCar,
+          cantDocHor: item.cantDocHor,
+        });
+      }
+      return acc;
+    }, []);
+
+    const total1General22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantGeneral,
+      0
+    );
+    const total1Policia22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantPolicia,
+      0
+    );
+    const total1SerPen22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantSerPen,
+      0
+    );
+    const total1Medicos22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantMedicos,
+      0
+    );
+    const total1Enfermeria22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantEnfermeria,
+      0
+    );
+    const total1Justicia22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantJusticia,
+      0
+    );
+    const total1Vial22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantVial,
+      0
+    );
+    const total1Superior22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantSuperior,
+      0
+    );
+    const total1Legislativo22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantLegislativo,
+      0
+    );
+    const total1Resto22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantResto,
+      0
+    );
+    const total1DocCar22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantDocCar,
+      0
+    );
+    const total1DocHor22 = this.instEmpYOtrosSup.reduce(
+      (acc, item) => acc + item.cantDocHor,
+      0
+    );
+    
+    this.totalInstEmpSup = [total1General22, total1Policia22, total1SerPen22, total1Medicos22, total1Enfermeria22, total1Justicia22, total1Vial22, total1Superior22, total1Legislativo22, total1Resto22, total1DocCar22, total1DocHor22];
+
     //FIN DE FILTRO
   }
 
