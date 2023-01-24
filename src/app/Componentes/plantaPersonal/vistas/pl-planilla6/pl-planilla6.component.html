@@ -16,15 +16,34 @@
   </div>
 </form>
 
-<hr><table class="table table-striped table-hover" id="table1" *ngIf="permanente">
+<hr><table id="table1" >
   <caption>{{headers[0]}}</caption>
   <thead>
     <tr>
-      <th>Descripción</th>
-      <th>Filtro 1</th>
-      <th>Filtro 2</th>
-      <th>Var. Absoluta</th>
-      <th>Var. Relativa</th>
+      <th rowspan="2">Concepto/Escalafón</th>
+      <th rowspan="2">General</th>
+      <th colspan="3">Seguridad</th>
+      <th colspan="3">Salud</th>
+      <th rowspan="2">Justicia</th>
+      <th rowspan="2">Vial</th>
+      <th rowspan="2">Autoridades Superiores</th>
+      <th rowspan="2">Legislativo</th>
+      <th rowspan="2">Resto</th>
+      <th rowspan="2">SUBTOTAL</th>
+      <th colspan="4">Docente</th>
+      <th rowspan="2">TOTAL</th>
+    </tr>
+    <tr>
+      <th>Policia</th>
+      <th>Serv. Penitenciario</th>
+      <th>Subtotal Seguridad</th>
+      <th>Profesional Asistencial Sanitaria</th>
+      <th>Enfermería</th>
+      <th>Subtotal Salud</th>
+      <th>Cargos</th>
+      <th>Hs. Cátedras</th>
+      <th>Hs. Cát. en Cargos</th>
+      <th>Subtotal Docente</th>
     </tr>
   </thead>
   <tbody>
@@ -50,73 +69,6 @@
   </tfoot>
 </table>
 
-<table class="table table-striped table-hover" id="table2" *ngIf="permanente">
-  <caption>{{headers[1]}}</caption>
-  <thead>
-    <tr>
-      <th>Descripción</th>
-      <th>Filtro 1</th>
-      <th>Filtro 2</th>
-      <th>Var. Absoluta</th>
-      <th>Var. Relativa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of temporario">
-      <td>{{item.descripcion}}</td>
-      <td>{{item.cantidad1.toFixed(2)}}</td>
-      <td>{{item.cantidad2.toFixed(2)}}</td>
-      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
-      <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
-        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <th>TOTALES</th>
-      <td>{{ total1Tem[0].toFixed(2) }}</td>
-      <td>{{ total1Tem[1].toFixed(2) }}</td>
-      <td>{{ (total1Tem[0] - total1Tem[1]).toFixed(2) }}</td>
-      <td>{{ total1Tem[1] === 0 ? 0 : ((total1Tem[0].toFixed(2) - total1Tem[1].toFixed(2)) / total1Tem[1].toFixed(2) | percent:'.2')
-        }}
-      </td>
-    </tr>
-  </tfoot>
-</table>
-
-<table class="table table-striped table-hover" id="table3" *ngIf="permanente">
-  <caption>{{headers[2]}}</caption>
-  <thead>
-    <tr>
-      <th>Descripción</th>
-      <th>Filtro 1</th>
-      <th>Filtro 2</th>
-      <th>Var. Absoluta</th>
-      <th>Var. Relativa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of suplente">
-      <td>{{item.descripcion}}</td>
-      <td>{{item.cantidad1.toFixed(2)}}</td>
-      <td>{{item.cantidad2.toFixed(2)}}</td>
-      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
-      <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
-        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <th>TOTALES</th>
-      <td>{{ total1Sup[0].toFixed(2) }}</td>
-      <td>{{ total1Sup[1].toFixed(2) }}</td>
-      <td>{{ (total1Sup[0] - total1Sup[1]).toFixed(2) }}</td>
-      <td>{{ total1Sup[1] === 0 ? 0 : ((total1Sup[0].toFixed(2) - total1Sup[1].toFixed(2)) / total1Sup[1].toFixed(2) | percent:'.2')
-        }}
-      </td>
-    </tr>
-  </tfoot>
-</table>
 
 <hr>
 <button (click)="multiTable()" class="btn btn-primary mb-3" *ngIf="permanente">Exportar</button>
