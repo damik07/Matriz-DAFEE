@@ -2,3 +2,10 @@ table{
   font-size: small;
   text-align-last: center;
 }
+#subtotal1{
+  background-color: aquamarine;
+}
+#subtotal2{
+  background-color: yellowgreen;
+}
+
