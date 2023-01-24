@@ -112,43 +112,41 @@
       <td>{{i.cantSuperior.toFixed(2)}}</td>
       <td>{{i.cantLegislativo.toFixed(2)}}</td>
       <td>{{i.cantResto.toFixed(2)}}</td>
-      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen] + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
-        i.cantVial +
-        i.Superior + i.cantLegislativo + i.cantResto).toFixed(2) }}</td>
+      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto).toFixed(2) }}</td>
       <td>{{i.cantDocCar.toFixed(2)}}</td>
       <td>{{ (i.cantDocHor * 30).toFixed(2)}}</td>
       <td>{{i.cantDocHor.toFixed(2)}}</td>
       <td>{{ (i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
       <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
-        i.cantVial + i.cantSuperior +
-        i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
     </tr>
     <tr>
-      <td> - ADMINISTRACIÓN PÚBLICA NO FINANCIERA</td>
-      <td>{{totalAdmiPubPer[0].toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[1].toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[2].toFixed(2)}}</td>
-      <td>{{ (totalAdmiPubPer[1] + totalAdmiPubPer[2]).toFixed(2) }}</td>
-      <td>{{totalAdmiPubPer[3].toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[4].toFixed(2)}}</td>
-      <td>{{ (totalAdmiPubPer[3] + totalAdmiPubPer[4]).toFixed(2) }}</td>
-      <td>{{totalAdmiPubPer[5].toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[6].toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[7].toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[8].toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[9].toFixed(2)}}</td>
-      <td>{{ (totalAdmiPubPer[0] + totalAdmiPubPer[1] + totalAdmiPubPer[2] + totalAdmiPubPer[3] + totalAdmiPubPer[4] +
-        totalAdmiPubPer[5] + totalAdmiPubPer[6] + totalAdmiPubPer[7] + totalAdmiPubPer[8] +
-        totalAdmiPubPer[9]).toFixed(2) }}</td>
-      <td>{{totalAdmiPubPer[10].toFixed(2)}}</td>
-      <td>{{ (totalAdmiPubPer[11] * 30).toFixed(2)}}</td>
-      <td>{{totalAdmiPubPer[11].toFixed(2)}}</td>
-      <td>{{ (totalAdmiPubPer[10] + totalAdmiPubPer[11]).toFixed(2) }}</td>
-      <td>{{ (totalAdmiPubPer[0] + totalAdmiPubPer[1] + totalAdmiPubPer[2] + totalAdmiPubPer[3] + totalAdmiPubPer[4] +
-        totalAdmiPubPer[5] + totalAdmiPubPer[6] + totalAdmiPubPer[7] + totalAdmiPubPer[8] + totalAdmiPubPer[9] +
-        totalAdmiPubPer[10] + totalAdmiPubPer[11]).toFixed(2) }}</td>
+      <td> - INSTITUTO, EMPRESAS Y OTROS ENTES</td>
+      <td>{{totalInstEmpPer[0].toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[1].toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[2].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpPer[1] + totalInstEmpPer[2]).toFixed(2) }}</td>
+      <td>{{totalInstEmpPer[3].toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[4].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpPer[3] + totalInstEmpPer[4]).toFixed(2) }}</td>
+      <td>{{totalInstEmpPer[5].toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[6].toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[7].toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[8].toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[9].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpPer[0] + totalInstEmpPer[1] + totalInstEmpPer[2] + totalInstEmpPer[3] + totalInstEmpPer[4] +
+      totalInstEmpPer[5] + totalInstEmpPer[6] + totalInstEmpPer[7] + totalInstEmpPer[8] +
+      totalInstEmpPer[9]).toFixed(2) }}</td>
+      <td>{{totalInstEmpPer[10].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpPer[11] * 30).toFixed(2)}}</td>
+      <td>{{totalInstEmpPer[11].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpPer[10] + totalInstEmpPer[11]).toFixed(2) }}</td>
+      <td>{{ (totalInstEmpPer[0] + totalInstEmpPer[1] + totalInstEmpPer[2] + totalInstEmpPer[3] + totalInstEmpPer[4] +
+      totalInstEmpPer[5] + totalInstEmpPer[6] + totalInstEmpPer[7] + totalInstEmpPer[8] + totalInstEmpPer[9] +
+      totalInstEmpPer[10] + totalInstEmpPer[11]).toFixed(2) }}</td>
     </tr>
-    <tr *ngFor="let i for admiPubNoFinPer">
+    <tr *ngFor="let i for instEmpYOtrosPer">
       <td>{{i.tipo_organismo}}</td>
       <td>{{i.cantGeneral.toFixed(2)}}</td>
       <td>{{i.cantPolicia.toFixed(2)}}</td>
@@ -162,16 +160,14 @@
       <td>{{i.cantSuperior.toFixed(2)}}</td>
       <td>{{i.cantLegislativo.toFixed(2)}}</td>
       <td>{{i.cantResto.toFixed(2)}}</td>
-      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen] + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
-        i.cantVial +
-        i.Superior + i.cantLegislativo + i.cantResto).toFixed(2) }}</td>
+      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto).toFixed(2) }}</td>
       <td>{{i.cantDocCar.toFixed(2)}}</td>
       <td>{{ (i.cantDocHor * 30).toFixed(2)}}</td>
       <td>{{i.cantDocHor.toFixed(2)}}</td>
       <td>{{ (i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
       <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
-        i.cantVial + i.cantSuperior +
-        i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
     </tr>
   </tbody>
 
