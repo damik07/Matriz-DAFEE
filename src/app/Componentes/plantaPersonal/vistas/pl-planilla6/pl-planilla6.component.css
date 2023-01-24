@@ -15,4 +15,8 @@ table{
 #texto{
   font-size: x-small;
 }
+thead th, tfoot th, tfoot td {
+  background: linear-gradient(to bottom, rgba(45, 150, 168, 0.1), rgba(45, 150, 168,0.5));
+  border: 2px solid black;
+}
 
