@@ -47,26 +47,29 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of permanente">
-      <td>{{item.descripcion}}</td>
-      <td>{{item.cantidad1.toFixed(2)}}</td>
-      <td>{{item.cantidad2.toFixed(2)}}</td>
-      <td>{{ (item.cantidad1 - item.cantidad2).toFixed(2) }}</td>
-      <td>{{ item.cantidad2 === 0 ? 0 : ((item.cantidad1.toFixed(2) - item.cantidad2.toFixed(2)) /
-        item.cantidad2.toFixed(2) | percent:'.2') }}</td>
+    <tr>
+      <td>PLANTA PERMANENTE</td>
+      <td>{{total1Per[0].toFixed(2)}}</td>
+      <td>{{total1Per[1].toFixed(2)}}</td>
+      <td>{{total1Per[2].toFixed(2)}}</td>
+      <td>{{ (total1Per[1] + total1Per[2]).toFixed(2) }}</td>
+      <td>{{total1Per[3].toFixed(2)}}</td>
+      <td>{{total1Per[4].toFixed(2)}}</td>
+      <td>{{ (total1Per[3] + total1Per[4]).toFixed(2) }}</td>
+      <td>{{total1Per[5].toFixed(2)}}</td>
+      <td>{{total1Per[6].toFixed(2)}}</td>
+      <td>{{total1Per[7].toFixed(2)}}</td>
+      <td>{{total1Per[8].toFixed(2)}}</td>
+      <td>{{total1Per[9].toFixed(2)}}</td>
+      <td>{{ (total1Per[1] + total1Per[2] + total1Per[3] + total1Per[4] + total1Per[5] + total1Per[6] + total1Per[7] + total1Per[8] + total1Per[9]).toFixed(2) }}</td>
+      <td>{{total1Per[10].toFixed(2)}}</td>
+      <td>{{ (total1Per[11] * 30).toFixed(2)}}</td>
+      <td>{{total1Per[11].toFixed(2)}}</td>
+      <td>{{ (total1Per[10] + total1Per[11]).toFixed(2) }}</td>
+      <td>{{ (total1Per[1] + total1Per[2] + total1Per[3] + total1Per[4] + total1Per[5] + total1Per[6] + total1Per[7] + total1Per[8] + total1Per[9] + total1Per[10] + total1Per[11]).toFixed(2) }}</td>
     </tr>
   </tbody>
-  <tfoot>
-    <tr>
-      <th>TOTALES</th>
-      <td>{{ total1Per[0].toFixed(2) }}</td>
-      <td>{{ total1Per[1].toFixed(2) }}</td>
-      <td>{{ (total1Per[0] - total1Per[1]).toFixed(2) }}</td>
-      <td>{{ total1Per[1] === 0 ? 0 : ((total1Per[0].toFixed(2) - total1Per[1].toFixed(2)) / total1Per[1].toFixed(2) | percent:'.2')
-        }}
-      </td>
-    </tr>
-  </tfoot>
+  
 </table>
 
 
