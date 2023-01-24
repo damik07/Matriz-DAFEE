@@ -525,9 +525,10 @@ export class PlPlanilla6Component implements OnInit {
 
     //permanente en admi y sector publico
 
-    const filtroAdmiNoFinPer = this.permanente.filter(dato => {
-      dato.tipo_organismo !== "Institutos de obra social" && dato.tipo_organismo !== "Empresas"
-    });
+    const filtroAdmiNoFinPer = this.permanente.filter((dato) => 
+      dato.tipo_organismo !== "Empresas" && dato.tipo_organismo !== "Institutos de obra social"
+    );
+    
 
     this.admiPubNoFinPer = filtroAdmiNoFinPer.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
@@ -618,9 +619,9 @@ export class PlPlanilla6Component implements OnInit {
     this.totalAdmiPubPer = [total1General01, total1Policia01, total1SerPen01, total1Medicos01, total1Enfermeria01, total1Justicia01, total1Vial01, total1Superior01, total1Legislativo01, total1Resto01, total1DocCar01, total1DocHor01];
 
 
-    const filtroInsEmpPer = this.permanente.filter(dato => {
-      dato.tipo_organismo === "Institutos de obra social" && dato.tipo_organismo === "Empresas"
-    });
+    const filtroInsEmpPer = this.permanente.filter(dato => 
+      dato.tipo_organismo === "Institutos de obra social" || dato.tipo_organismo === "Empresas"
+    );
 
     this.instEmpYOtrosPer = filtroInsEmpPer.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
@@ -806,9 +807,9 @@ export class PlPlanilla6Component implements OnInit {
 
     //temporario en admi y sector publico
 
-    const filtroAdmiNoFinTem = this.temporario.filter(dato => {
+    const filtroAdmiNoFinTem = this.temporario.filter(dato => 
       dato.tipo_organismo !== "Institutos de obra social" && dato.tipo_organismo !== "Empresas"
-    });
+    );
 
     this.admiPubNoFinTem = filtroAdmiNoFinTem.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
@@ -899,9 +900,9 @@ export class PlPlanilla6Component implements OnInit {
     this.totalAdmiPubTem = [total1General11, total1Policia11, total1SerPen11, total1Medicos11, total1Enfermeria11, total1Justicia11, total1Vial11, total1Superior11, total1Legislativo11, total1Resto11, total1DocCar11, total1DocHor11];
 
 
-    const filtroInsEmpTem = this.temporario.filter(dato => {
-      dato.tipo_organismo === "Institutos de obra social" && dato.tipo_organismo === "Empresas"
-    });
+    const filtroInsEmpTem = this.temporario.filter(dato => 
+      dato.tipo_organismo === "Institutos de obra social" || dato.tipo_organismo === "Empresas"
+    );
 
     this.instEmpYOtrosTem = filtroInsEmpTem.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
@@ -1086,9 +1087,9 @@ export class PlPlanilla6Component implements OnInit {
 
     //Suplente en admi y sector publico
 
-    const filtroAdmiNoFinSup = this.suplente.filter(dato => {
+    const filtroAdmiNoFinSup = this.suplente.filter(dato => 
       dato.tipo_organismo !== "Institutos de obra social" && dato.tipo_organismo !== "Empresas"
-    });
+    );
 
     this.admiPubNoFinSup = filtroAdmiNoFinSup.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
@@ -1179,9 +1180,9 @@ export class PlPlanilla6Component implements OnInit {
     this.totalAdmiPubSup = [total1General21, total1Policia21, total1SerPen21, total1Medicos21, total1Enfermeria21, total1Justicia21, total1Vial21, total1Superior21, total1Legislativo21, total1Resto21, total1DocCar21, total1DocHor21];
 
 
-    const filtroInsEmpSup = this.suplente.filter(dato => {
-      dato.tipo_organismo === "Institutos de obra social" && dato.tipo_organismo === "Empresas"
-    });
+    const filtroInsEmpSup = this.suplente.filter(dato => 
+      dato.tipo_organismo === "Institutos de obra social" || dato.tipo_organismo === "Empresas"
+    );
 
     this.instEmpYOtrosSup = filtroInsEmpSup.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.tipo_organismo === item.tipo_organismo);
