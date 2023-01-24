@@ -5,10 +5,12 @@ table{
 #subtotal1{
   background-color: rgba(38, 145, 24, 0.678);
   font-size: x-small;
+  border: 1px solid black;
 }
 #subtotal2{
   background-color: rgba(114, 192, 111, 0.74);
   font-size: x-small;
+  border: 1px solid black;
 }
 #texto{
   font-size: x-small;
