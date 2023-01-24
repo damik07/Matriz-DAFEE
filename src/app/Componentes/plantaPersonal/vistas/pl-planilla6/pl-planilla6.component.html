@@ -98,7 +98,7 @@
         totalAdmiPubPer[5] + totalAdmiPubPer[6] + totalAdmiPubPer[7] + totalAdmiPubPer[8] + totalAdmiPubPer[9] +
         totalAdmiPubPer[10] + totalAdmiPubPer[11]).toFixed(2) }}</td>
     </tr>
-    <tr *ngFor="let i for admiPubNoFinPer">
+    <tr *ngFor="let i for admiPubNoFinPer" id="texto">
       <td>{{i.tipo_organismo}}</td>
       <td>{{i.cantGeneral.toFixed(2)}}</td>
       <td>{{i.cantPolicia.toFixed(2)}}</td>
@@ -146,7 +146,7 @@
       totalInstEmpPer[5] + totalInstEmpPer[6] + totalInstEmpPer[7] + totalInstEmpPer[8] + totalInstEmpPer[9] +
       totalInstEmpPer[10] + totalInstEmpPer[11]).toFixed(2) }}</td>
     </tr>
-    <tr *ngFor="let i for instEmpYOtrosPer">
+    <tr *ngFor="let i for instEmpYOtrosPer" id="texto">
       <td>{{i.tipo_organismo}}</td>
       <td>{{i.cantGeneral.toFixed(2)}}</td>
       <td>{{i.cantPolicia.toFixed(2)}}</td>

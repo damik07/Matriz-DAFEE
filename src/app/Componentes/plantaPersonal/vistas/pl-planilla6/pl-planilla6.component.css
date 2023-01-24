@@ -3,9 +3,14 @@ table{
   text-align-last: center;
 }
 #subtotal1{
-  background-color: aquamarine;
+  background-color: rgba(38, 145, 24, 0.678);
+  font-size: x-small;
 }
 #subtotal2{
-  background-color: yellowgreen;
+  background-color: rgba(114, 192, 111, 0.74);
+  font-size: x-small;
+}
+#texto{
+  font-size: x-small;
 }
 
