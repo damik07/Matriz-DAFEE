@@ -34,6 +34,12 @@ export class PlPlanilla6Component implements OnInit {
   totalAdmiPubCon: any[];
   instEmpYOtrosCon: any[];
   totalInstEmpCon: any[];
+  becarios?: any[];
+  total1Bec: any[];
+  residentes?: any[];
+  total1Res: any[];
+
+
   headers = ['Planta Permanente', 'Planta Temporaria', 'Planta Suplente'];
 
 
@@ -1558,6 +1564,192 @@ export class PlPlanilla6Component implements OnInit {
     );
     
     this.totalInstEmpCon = [total1General32, total1Policia32, total1SerPen32, total1Medicos32, total1Enfermeria32, total1Justicia32, total1Vial32, total1Superior32, total1Legislativo32, total1Resto32, total1DocCar32, total1DocHor32];
+
+    // Filtro para Becarios quitando el personal de las empresas que no consolidan
+    const plantaBec = datosFiltrados.filter(
+      (e) => e.tipo_planta === 'Becarios' && e.tipo_organismo !== 'Empresas 2'
+    );
+    this.becarios = plantaBec.reduce((acc, item) => {
+      const existingItem = acc.find((i) => i.descripcion === item.descripcion);
+      if (existingItem) {
+        existingItem.cantGeneral += item.cantGeneral;
+        existingItem.cantPolicia += item.cantPolicia;
+        existingItem.cantSerPen += item.cantSerPen;
+        existingItem.cantMedicos += item.cantMedicos;
+        existingItem.cantEnfermeria += item.cantEnfermeria;
+        existingItem.cantJusticia += item.cantJusticia;
+        existingItem.cantVial += item.cantVial;
+        existingItem.cantSuperior += item.cantSuperior;
+        existingItem.cantLegislativo += item.cantLegislativo;
+        existingItem.cantResto += item.cantResto;
+        existingItem.cantDocCar += item.cantDocCar;
+        existingItem.cantDocHor += item.cantDocHor;
+
+      } else {
+        acc.push({
+          DA: item.DA,
+          descripcion: item.descripcion,
+          tipo_organismo: item.tipo_organismo,
+          cantGeneral: item.cantGeneral,
+          cantPolicia: item.cantPolicia,
+          cantSerPen: item.cantSerPen,
+          cantMedicos: item.cantMedicos,
+          cantEnfermeria: item.cantEnfermeria,
+          cantJusticia: item.cantJusticia,
+          cantVial: item.cantVial,
+          cantSuperior: item.cantSuperior,
+          cantLegislativo: item.cantLegislativo,
+          cantResto: item.cantResto,
+          cantDocCar: item.cantDocCar,
+          cantDocHor: item.cantDocHor,
+        });
+      }
+      return acc;
+    }, []);
+
+    const total1General4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantGeneral,
+      0
+    );
+    const total1Policia4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantPolicia,
+      0
+    );
+    const total1SerPen4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantSerPen,
+      0
+    );
+    const total1Medicos4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantMedicos,
+      0
+    );
+    const total1Enfermeria4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantEnfermeria,
+      0
+    );
+    const total1Justicia4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantJusticia,
+      0
+    );
+    const total1Vial4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantVial,
+      0
+    );
+    const total1Superior4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantSuperior,
+      0
+    );
+    const total1Legislativo4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantLegislativo,
+      0
+    );
+    const total1Resto4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantResto,
+      0
+    );
+    const total1DocCar4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantDocCar,
+      0
+    );
+    const total1DocHor4 = this.becarios.reduce(
+      (acc, item) => acc + item.cantDocHor,
+      0
+    );
+    
+    this.total1Bec = [total1General4, total1Policia4, total1SerPen4, total1Medicos4, total1Enfermeria4, total1Justicia4, total1Vial4, total1Superior4, total1Legislativo4, total1Resto4, total1DocCar4, total1DocHor4];
+
+    // Filtro para Residentes quitando el personal de las empresas que no consolidan
+    const plantaRes = datosFiltrados.filter(
+      (e) => e.tipo_planta === 'Residentes' && e.tipo_organismo !== 'Empresas 2'
+    );
+    this.residentes = plantaRes.reduce((acc, item) => {
+      const existingItem = acc.find((i) => i.descripcion === item.descripcion);
+      if (existingItem) {
+        existingItem.cantGeneral += item.cantGeneral;
+        existingItem.cantPolicia += item.cantPolicia;
+        existingItem.cantSerPen += item.cantSerPen;
+        existingItem.cantMedicos += item.cantMedicos;
+        existingItem.cantEnfermeria += item.cantEnfermeria;
+        existingItem.cantJusticia += item.cantJusticia;
+        existingItem.cantVial += item.cantVial;
+        existingItem.cantSuperior += item.cantSuperior;
+        existingItem.cantLegislativo += item.cantLegislativo;
+        existingItem.cantResto += item.cantResto;
+        existingItem.cantDocCar += item.cantDocCar;
+        existingItem.cantDocHor += item.cantDocHor;
+
+      } else {
+        acc.push({
+          DA: item.DA,
+          descripcion: item.descripcion,
+          tipo_organismo: item.tipo_organismo,
+          cantGeneral: item.cantGeneral,
+          cantPolicia: item.cantPolicia,
+          cantSerPen: item.cantSerPen,
+          cantMedicos: item.cantMedicos,
+          cantEnfermeria: item.cantEnfermeria,
+          cantJusticia: item.cantJusticia,
+          cantVial: item.cantVial,
+          cantSuperior: item.cantSuperior,
+          cantLegislativo: item.cantLegislativo,
+          cantResto: item.cantResto,
+          cantDocCar: item.cantDocCar,
+          cantDocHor: item.cantDocHor,
+        });
+      }
+      return acc;
+    }, []);
+
+    const total1General5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantGeneral,
+      0
+    );
+    const total1Policia5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantPolicia,
+      0
+    );
+    const total1SerPen5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantSerPen,
+      0
+    );
+    const total1Medicos5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantMedicos,
+      0
+    );
+    const total1Enfermeria5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantEnfermeria,
+      0
+    );
+    const total1Justicia5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantJusticia,
+      0
+    );
+    const total1Vial5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantVial,
+      0
+    );
+    const total1Superior5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantSuperior,
+      0
+    );
+    const total1Legislativo5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantLegislativo,
+      0
+    );
+    const total1Resto5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantResto,
+      0
+    );
+    const total1DocCar5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantDocCar,
+      0
+    );
+    const total1DocHor5 = this.residentes.reduce(
+      (acc, item) => acc + item.cantDocHor,
+      0
+    );
+    
+    this.total1Res = [total1General5, total1Policia5, total1SerPen5, total1Medicos5, total1Enfermeria5, total1Justicia5, total1Vial5, total1Superior5, total1Legislativo5, total1Resto5, total1DocCar5, total1DocHor5];
 
     //FIN DE FILTRO
   }
