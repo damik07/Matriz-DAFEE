@@ -41,7 +41,7 @@ export class PlSerieEscComponent implements OnInit {
     const filtroEscalafon = filtroFecha.filter(dato =>
       dato.escalafon = formData.escalafon);
 
-
+    console.log(filtroEscalafon);
 
      let result = Object.entries(filtroEscalafon.reduce((acc, item) => {
         let date = new Date(item.fecha);
