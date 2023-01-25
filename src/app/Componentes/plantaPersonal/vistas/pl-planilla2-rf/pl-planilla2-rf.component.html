@@ -1,0 +1,143 @@
+<h3>Planilla 2 Responsabilidad Fiscal - Planta de Personal - !!!SIN TERMINAR!!!!</h3>
+
+<form (ngSubmit)="filterData1(f.value)" #f="ngForm">
+  <div>
+    <div class="row">
+      <div class="col-4">
+        <label for="startDate1" class="form-label">Seleccionar mes</label>
+        <input class="form-control" type="month" name="startDate1" id="startDate1" ngModel>
+      </div>
+     
+    </div>
+    <br>
+    <div class="col-2">
+      <button type="submit" class="btn btn-primary mb-3">Filtrar</button>
+    </div>
+  </div>
+</form>
+
+<hr>
+
+<table id="table1">
+  <caption>
+  <h5>PLANILLA 2: CARGOS, HORAS CÁTEDRA Y MODULOS POR ESCALAFÓN</h5>
+  <h6>Jurisdicción: Entre Ríos</h6>
+  <h6>Mes/Año: {{fecha}}</h6>
+  </caption>
+
+  <thead>
+    <tr>
+      <th rowspan="2">Dirección de Administración</th>
+      <th rowspan="2">CUIT</th>
+      <th rowspan="2">CUIT Pagador</th>
+      <th rowspan="2">Clasificación Institucional</th>
+      <th rowspan="2">Consolida en Presupuesto</th>
+      <th rowspan="2">Código Presupuestario</th>
+      <th colspan="3">Cargos de Planta</th>
+      <th colspan="3">Horas Cátedra de Planta</th>
+      <th colspan="3">Módulos de Planta</th>
+      <th colspan="3">Contratos</th>
+      <th colspan="6">Residencias, pasantías, prácticas, becas</th>
+      <th colspan="6">Anexo: Proyectos financiados por el Gobierno Nacional</th>
+            
+    </tr>
+    <tr>
+      <th>Cubiertos con liq. de haberes</th>
+      <th>Cubiertos sin liq. de haberes</th>
+      <th>Suplencias</th>
+      <th>Cubiertos con liq. de haberes</th>
+      <th>Cubiertos sin liq. de haberes</th>
+      <th>Suplencias</th>
+      <th>Cubiertos con liq. de haberes</th>
+      <th>Cubiertos sin liq. de haberes</th>
+      <th>Suplencias</th>
+      <th>En cargos</th>
+      <th>En horas cátedra</th>
+      <th>En módulos</th>
+      <th>Cargos ocupados</th>
+      <th>Horas Cátedra ocupadas</th>
+      <th>Módulos ocupados</th>
+      <th>Contratos ocupados</th>
+      <th>Contratos en Horas Cátedra</th>
+      <th>Contratos en Módulos</th>
+      <th>Cargos en Planta</th>
+      <th>Horas Cátedra en planta</th>
+      <th>Módulos en planta</th>
+      <th>Cargos corresp. a contratados</th>
+      <th>Horas Cátedra corresp. a contratados</th>
+      <th>Módulos corresp. a contratados</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <!-- sección de planta permanente-->
+    <tr id="subtotal1">
+      <td>TOTAL</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      
+    </tr>
+    <tr id="subtotal1">
+      <td>Planta Permanente</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      <td>{{total1Per[0].toFixed(0)}}</td>
+      
+    </tr>
+  </tbody>
+
+
+</table>
