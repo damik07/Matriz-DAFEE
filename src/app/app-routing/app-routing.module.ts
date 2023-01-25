@@ -11,6 +11,7 @@ import { PlCompMensComponent } from '../Componentes/plantaPersonal/vistas/pl-com
 import { PlCompErbesComponent } from '../Componentes/plantaPersonal/vistas/pl-comp-erbes/pl-comp-erbes.component';
 import { PlCompDaComponent } from '../Componentes/plantaPersonal/vistas/pl-comp-da/pl-comp-da.component';
 import { PlPlanilla6Component } from '../Componentes/plantaPersonal/vistas/pl-planilla6/pl-planilla6.component';
+import { PlPlanilla1RFComponent } from '../Componentes/plantaPersonal/vistas/pl-planilla1-rf/pl-planilla1-rf.component';
 
 const routes: Routes = [
   {path:'compIntegracion', component:CompIntegComponent, //canActivate:[GuardGuard]
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'plCompErbes', component:PlCompErbesComponent},
   {path:'plCompDA', component:PlCompDaComponent},
   {path:'plPlanilla6', component:PlPlanilla6Component},
+  {path:'plPlanilla1', component:PlPlanilla1RFComponent},
   //{path:'', redirectTo:'compIntegracion', pathMatch:'full'}
   
 ];
