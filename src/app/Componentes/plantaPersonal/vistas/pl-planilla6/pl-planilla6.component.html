@@ -617,8 +617,8 @@
         i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
     </tr>
     <tr>
-    <th colspan="19" id="filaVacia"></th>
-  </tr>
+      <th colspan="19" id="filaVacia"></th>
+    </tr>
 
     <!-- Totales de permanente, temporarios, suplentes y contratos-->
     <tr id="subtotal1">
@@ -669,8 +669,8 @@
     </tr>
 
     <tr>
-    <th colspan="19" id="filaVacia"></th>
-  </tr>
+      <th colspan="19" id="filaVacia"></th>
+    </tr>
 
     <tr id="subtotal1">
       <td>TOTAL SECTOR PUBLICO NO FINANC</td>
@@ -713,6 +713,59 @@
         (total1Con[0] + total1Con[1] + total1Con[2] + total1Con[3] + total1Con[4] + total1Con[5] +
         total1Con[6] + total1Con[7] + total1Con[8] + total1Con[9] + total1Con[10] + total1Con[11])).toFixed(2) }}</td>
     </tr>
+
+    <tr>
+      <th colspan="19" id="filaVacia"></th>
+    </tr>
+
+    <!-- sección de Becarios y Residentes-->
+    <tr id="subtotal2">
+      <td>Becarios</td>
+      <td>{{total1Bec[0].toFixed(2)}}</td>
+      <td>{{total1Bec[1].toFixed(2)}}</td>
+      <td>{{total1Bec[2].toFixed(2)}}</td>
+      <td>{{ (total1Bec[1] + total1Bec[2]).toFixed(2) }}</td>
+      <td>{{total1Bec[3].toFixed(2)}}</td>
+      <td>{{total1Bec[4].toFixed(2)}}</td>
+      <td>{{ (total1Bec[3] + total1Bec[4]).toFixed(2) }}</td>
+      <td>{{total1Bec[5].toFixed(2)}}</td>
+      <td>{{total1Bec[6].toFixed(2)}}</td>
+      <td>{{total1Bec[7].toFixed(2)}}</td>
+      <td>{{total1Bec[8].toFixed(2)}}</td>
+      <td>{{total1Bec[9].toFixed(2)}}</td>
+      <td>{{ (total1Bec[0] + total1Bec[1] + total1Bec[2] + total1Bec[3] + total1Bec[4] + total1Bec[5] + total1Bec[6] +
+        total1Bec[7] + total1Bec[8] + total1Bec[9]).toFixed(2) }}</td>
+      <td>{{total1Bec[10].toFixed(2)}}</td>
+      <td>{{ (total1Bec[11] * 30).toFixed(2)}}</td>
+      <td>{{total1Bec[11].toFixed(2)}}</td>
+      <td>{{ (total1Bec[10] + total1Bec[11]).toFixed(2) }}</td>
+      <td>{{ (total1Bec[0] + total1Bec[1] + total1Bec[2] + total1Bec[3] + total1Bec[4] + total1Bec[5] + total1Bec[6] +
+        total1Bec[7] + total1Bec[8] + total1Bec[9] + total1Bec[10] + total1Bec[11]).toFixed(2) }}</td>
+    </tr>
+    <tr id="subtotal2">
+      <td>Residentes</td>
+      <td>{{total1Res[0].toFixed(2)}}</td>
+      <td>{{total1Res[1].toFixed(2)}}</td>
+      <td>{{total1Res[2].toFixed(2)}}</td>
+      <td>{{ (total1Res[1] + total1Res[2]).toFixed(2) }}</td>
+      <td>{{total1Res[3].toFixed(2)}}</td>
+      <td>{{total1Res[4].toFixed(2)}}</td>
+      <td>{{ (total1Res[3] + total1Res[4]).toFixed(2) }}</td>
+      <td>{{total1Res[5].toFixed(2)}}</td>
+      <td>{{total1Res[6].toFixed(2)}}</td>
+      <td>{{total1Res[7].toFixed(2)}}</td>
+      <td>{{total1Res[8].toFixed(2)}}</td>
+      <td>{{total1Res[9].toFixed(2)}}</td>
+      <td>{{ (total1Res[0] + total1Res[1] + total1Res[2] + total1Res[3] + total1Res[4] + total1Res[5] + total1Res[6] +
+        total1Res[7] + total1Res[8] + total1Res[9]).toFixed(2) }}</td>
+      <td>{{total1Res[10].toFixed(2)}}</td>
+      <td>{{ (total1Res[11] * 30).toFixed(2)}}</td>
+      <td>{{total1Res[11].toFixed(2)}}</td>
+      <td>{{ (total1Res[10] + total1Res[11]).toFixed(2) }}</td>
+      <td>{{ (total1Res[0] + total1Res[1] + total1Res[2] + total1Res[3] + total1Res[4] + total1Res[5] + total1Res[6] +
+        total1Res[7] + total1Res[8] + total1Res[9] + total1Res[10] + total1Res[11]).toFixed(2) }}</td>
+    </tr>
+
   </tbody>
 
 </table>
