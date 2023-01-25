@@ -1754,37 +1754,14 @@ export class PlPlanilla6Component implements OnInit {
     //FIN DE FILTRO
   }
 
-  multiTable(): void {
-    /* creación de función que agrega fila */
-    function create_gap_rows(ws, nrows) {
-      var ref = XLSX.utils.decode_range(ws['!ref']); // busca rango original
-      ref.e.r += nrows; // agrega una fila al final
-      ws['!ref'] = XLSX.utils.encode_range(ref); // reasigna fila
+  name = 'Planilla 6 - Planta de Personal.xlsx';
+    exportToExcel(): void {
+      let element = document.getElementById('table1');
+      const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+      const book: XLSX.WorkBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(book, worksheet, 'Hoja1');
+
+      XLSX.writeFile(book, this.name);
     }
-
-    /* primera tabla */
-    const ws = XLSX.utils.aoa_to_sheet([[this.headers[0]]]);
-    XLSX.utils.sheet_add_dom(ws, document.getElementById('table1'), {
-      origin: -1,
-    });
-    create_gap_rows(ws, 1); // espacio de una fila después de la primera tabla
-
-    /* segunda tabla */
-    XLSX.utils.sheet_add_aoa(ws, [[this.headers[1]]], { origin: -1 });
-    XLSX.utils.sheet_add_dom(ws, document.getElementById('table2'), {
-      origin: -1,
-    });
-    create_gap_rows(ws, 2); // espacio de dos filas después de la segunda tabla
-
-    /* tercera tabla */
-    XLSX.utils.sheet_add_aoa(ws, [[this.headers[2]]], { origin: -1 });
-    XLSX.utils.sheet_add_dom(ws, document.getElementById('table3'), {
-      origin: -1,
-    });
-
-    /* creación del libro y exportación */
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Hoja1');
-    XLSX.writeFile(wb, 'Comparativo Planta de Personal por DA.xlsx');
-  }
 }
