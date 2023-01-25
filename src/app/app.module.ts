@@ -24,10 +24,11 @@ import { PlPlanilla6Component } from './Componentes/plantaPersonal/vistas/pl-pla
 import { PlPlanilla1RFComponent } from './Componentes/plantaPersonal/vistas/pl-planilla1-rf/pl-planilla1-rf.component';
 import { PlPlanilla2RfComponent } from './Componentes/plantaPersonal/vistas/pl-planilla2-rf/pl-planilla2-rf.component';
 import { PlSerieEscComponent } from './Componentes/plantaPersonal/vistas/pl-serie-esc/pl-serie-esc.component';
+import { PlSerieDaComponent } from './Componentes/plantaPersonal/vistas/pl-serie-da/pl-serie-da.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule, NgxFileDropModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent, PlCompDaComponent, PlPlanilla6Component, PlPlanilla1RFComponent, PlPlanilla2RfComponent, PlSerieEscComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent, PlCompDaComponent, PlPlanilla6Component, PlPlanilla1RFComponent, PlPlanilla2RfComponent, PlSerieEscComponent, PlSerieDaComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

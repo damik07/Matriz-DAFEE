@@ -14,6 +14,7 @@ import { PlPlanilla6Component } from '../Componentes/plantaPersonal/vistas/pl-pl
 import { PlPlanilla1RFComponent } from '../Componentes/plantaPersonal/vistas/pl-planilla1-rf/pl-planilla1-rf.component';
 import { PlPlanilla2RfComponent } from '../Componentes/plantaPersonal/vistas/pl-planilla2-rf/pl-planilla2-rf.component';
 import { PlSerieEscComponent } from '../Componentes/plantaPersonal/vistas/pl-serie-esc/pl-serie-esc.component';
+import { PlSerieDaComponent } from '../Componentes/plantaPersonal/vistas/pl-serie-da/pl-serie-da.component';
 
 const routes: Routes = [
   {path:'compIntegracion', component:CompIntegComponent, //canActivate:[GuardGuard]
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'plPlanilla1', component:PlPlanilla1RFComponent},
   {path:'plPlanilla2', component:PlPlanilla2RfComponent},
   {path:'plSerieEsc', component:PlSerieEscComponent},
+  {path:'plSerieDA', component:PlSerieDaComponent},
   //{path:'', redirectTo:'compIntegracion', pathMatch:'full'}
   
 ];
