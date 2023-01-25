@@ -22,10 +22,11 @@ import { PlCompErbesComponent } from './Componentes/plantaPersonal/vistas/pl-com
 import { PlCompDaComponent } from './Componentes/plantaPersonal/vistas/pl-comp-da/pl-comp-da.component';
 import { PlPlanilla6Component } from './Componentes/plantaPersonal/vistas/pl-planilla6/pl-planilla6.component';
 import { PlPlanilla1RFComponent } from './Componentes/plantaPersonal/vistas/pl-planilla1-rf/pl-planilla1-rf.component';
+import { PlPlanilla2RfComponent } from './Componentes/plantaPersonal/vistas/pl-planilla2-rf/pl-planilla2-rf.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, AppRoutingModule, NgxFileDropModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent, PlCompDaComponent, PlPlanilla6Component, PlPlanilla1RFComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, FooterComponent, MenuNacComponent, CompIntegComponent, SerieIntegComponent, IntMensRealComponent, BDImportComponent, CompDistComponent, DistMensRealComponent, SerieDistComponent, PlCompMensComponent, PlCompErbesComponent, PlCompDaComponent, PlPlanilla6Component, PlPlanilla1RFComponent, PlPlanilla2RfComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

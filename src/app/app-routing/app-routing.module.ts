@@ -12,6 +12,7 @@ import { PlCompErbesComponent } from '../Componentes/plantaPersonal/vistas/pl-co
 import { PlCompDaComponent } from '../Componentes/plantaPersonal/vistas/pl-comp-da/pl-comp-da.component';
 import { PlPlanilla6Component } from '../Componentes/plantaPersonal/vistas/pl-planilla6/pl-planilla6.component';
 import { PlPlanilla1RFComponent } from '../Componentes/plantaPersonal/vistas/pl-planilla1-rf/pl-planilla1-rf.component';
+import { PlPlanilla2RfComponent } from '../Componentes/plantaPersonal/vistas/pl-planilla2-rf/pl-planilla2-rf.component';
 
 const routes: Routes = [
   {path:'compIntegracion', component:CompIntegComponent, //canActivate:[GuardGuard]
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'plCompDA', component:PlCompDaComponent},
   {path:'plPlanilla6', component:PlPlanilla6Component},
   {path:'plPlanilla1', component:PlPlanilla1RFComponent},
+  {path:'plPlanilla2', component:PlPlanilla2RfComponent},
   //{path:'', redirectTo:'compIntegracion', pathMatch:'full'}
   
 ];
