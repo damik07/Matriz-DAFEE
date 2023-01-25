@@ -39,10 +39,9 @@ export class PlSerieEscComponent implements OnInit {
     const filtroFecha = this.dataPlanta.filter(dato => 
       dato.fecha >= formData.startDate1 && dato.fecha <= formData.endDate1);
     const filtroEscalafon = filtroFecha.filter(dato =>
-      dato.escalafon = formData.escalafon);
+      dato.escalafon === formData.escalafon);
 
-    console.log(filtroEscalafon);
-
+    
      let result = Object.entries(filtroEscalafon.reduce((acc, item) => {
         let date = new Date(item.fecha);
         let mes = date.getMonth() + 1;
