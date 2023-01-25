@@ -8,6 +8,7 @@ import { PlantaDePersonalService } from '../../../../Servicios/planta-de-persona
   styleUrls: ['./pl-planilla1-rf.component.css']
 })
 export class PlPlanilla1RFComponent implements OnInit {
+  fecha: any;
   dataPlanta?: any[];
   permanente?: any[];
   total1Per: any[];
@@ -61,6 +62,7 @@ export class PlPlanilla1RFComponent implements OnInit {
         new Date(dato.fecha).getFullYear() ===
         new Date(formData.startDate1).getFullYear()
     );
+    this.fecha = formData.startDate1
 
     //filtro por escalafón
     const escGeneral = dfiltro1.filter(
@@ -441,10 +443,10 @@ export class PlPlanilla1RFComponent implements OnInit {
     const datosFiltrados = filtroGeneral.concat(filtroPolicia, filtroSerPen, filtroMedicos, filtroEnfermeria, filtroJusticia, filtroVial, filtroSuperior, filtroLegislativo, filtroResto, filtroDocCar, filtroDocHor);
 
     // Filtro para personal permanente quitando el personal de las empresas que no consolidan
-    const plantaPer = datosFiltrados.filter(
-      (e) => e.tipo_planta === 'Permanente' && e.tipo_organismo !== 'Empresas 2'
+    const plantaPerCL = datosFiltrados.filter(
+      (e) => e.tipo_planta === 'Permanente' && e.liquidacion === true && e.tipo_organismo !== "Empresas2"
     );
-    this.permanente = plantaPer.reduce((acc, item) => {
+    this.permanente = plantaPerCL.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.descripcion === item.descripcion);
       if (existingItem) {
         existingItem.cantGeneral += item.cantGeneral;
