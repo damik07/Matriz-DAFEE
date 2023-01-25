@@ -38,12 +38,12 @@ export class PlSerieEscComponent implements OnInit {
   filterGrafico(formData){
     const filtroFecha = this.dataPlanta.filter(dato => 
       dato.fecha >= formData.startDate1 && dato.fecha <= formData.endDate1);
-    const filtroCuenta = filtroFecha.filter(dato =>
-      dato.descripcion = formData.cuenta);
+    const filtroEscalafon = filtroFecha.filter(dato =>
+      dato.escalafon = formData.escalafon);
 
 
 
-     let result = Object.entries(filtroCuenta.reduce((acc, item) => {
+     let result = Object.entries(filtroEscalafon.reduce((acc, item) => {
         let date = new Date(item.fecha);
         let mes = date.getMonth() + 1;
         let año = date.getFullYear();
@@ -100,7 +100,7 @@ export class PlSerieEscComponent implements OnInit {
         },
         title: {
           display: true,
-          text: formData.cuenta
+          text: formData.escalafon
         }
       }
     },
