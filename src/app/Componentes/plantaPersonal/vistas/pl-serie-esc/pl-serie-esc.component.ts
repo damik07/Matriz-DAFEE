@@ -52,7 +52,7 @@ export class PlSerieEscComponent implements OnInit {
           acc[año] = Array(12).fill(0);
         }
       
-        acc[año][mes] += item.importe;
+        acc[año][mes] += item.cantidad;
       
         return acc;
       }, {})).map(([año, meses]) => ({
