@@ -48,6 +48,7 @@
     </tr>
   </thead>
   <tbody>
+    <!-- sección de planta permanente-->
     <tr id="subtotal1">
       <td>PLANTA PERMANENTE</td>
       <td>{{total1Per[0].toFixed(2)}}</td>
@@ -169,6 +170,8 @@
       <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
         i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
     </tr>
+
+    <!-- sección de planta temporaria-->
     <tr id="subtotal1">
       <td>PLANTA TEMPORARIA</td>
       <td>{{total1Tem[0].toFixed(2)}}</td>
@@ -288,6 +291,8 @@
       <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
         i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
     </tr>
+
+    <!-- sección de suplentes-->
     <tr id="subtotal1">
       <td>PLANTA SUPLENTE</td>
       <td>{{total1Sup[0].toFixed(2)}}</td>
@@ -409,6 +414,8 @@
       <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
         i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
     </tr>
+
+    <!-- subtotales de permanente, temporarios y suplentes-->
     <tr id="subtotal1">
       <td>SUBTOTAL ADM.PUBLICA NO FINANC</td>
       <td>{{(totalAdmiPubPer[0] + totalAdmiPubTem[0] + totalAdmiPubSup[0]).toFixed(2)}}</td>
@@ -482,6 +489,229 @@
         total1Sup[1] + total1Sup[2] + total1Sup[3] + total1Sup[4] + total1Sup[5] +
         total1Sup[6] + total1Sup[7] + total1Sup[8] + total1Sup[9] + total1Sup[10] +
         total1Sup[11])).toFixed(2) }}</td>
+    </tr>
+    <tr>
+      <th colspan="19" id="filaVacia"></th>
+    </tr>
+
+    <!-- sección de contratos-->
+    <tr id="subtotal1">
+      <td>CONTRATOS</td>
+      <td>{{total1Con[0].toFixed(2)}}</td>
+      <td>{{total1Con[1].toFixed(2)}}</td>
+      <td>{{total1Con[2].toFixed(2)}}</td>
+      <td>{{ (total1Con[1] + total1Con[2]).toFixed(2) }}</td>
+      <td>{{total1Con[3].toFixed(2)}}</td>
+      <td>{{total1Con[4].toFixed(2)}}</td>
+      <td>{{ (total1Con[3] + total1Con[4]).toFixed(2) }}</td>
+      <td>{{total1Con[5].toFixed(2)}}</td>
+      <td>{{total1Con[6].toFixed(2)}}</td>
+      <td>{{total1Con[7].toFixed(2)}}</td>
+      <td>{{total1Con[8].toFixed(2)}}</td>
+      <td>{{total1Con[9].toFixed(2)}}</td>
+      <td>{{ (total1Con[0] + total1Con[1] + total1Con[2] + total1Con[3] + total1Con[4] + total1Con[5] + total1Con[6] +
+        total1Con[7] +
+        total1Con[8] + total1Con[9]).toFixed(2) }}</td>
+      <td>{{total1Con[10].toFixed(2)}}</td>
+      <td>{{ (total1Con[11] * 30).toFixed(2)}}</td>
+      <td>{{total1Con[11].toFixed(2)}}</td>
+      <td>{{ (total1Con[10] + total1Con[11]).toFixed(2) }}</td>
+      <td>{{ (total1Con[0] + total1Con[1] + total1Con[2] + total1Con[3] + total1Con[4] + total1Con[5] + total1Con[6] +
+        total1Con[7] +
+        total1Con[8] + total1Con[9] + total1Con[10] + total1Con[11]).toFixed(2) }}</td>
+    </tr>
+    <tr id="subtotal2">
+      <td> -Adm. Pública No Financiera</td>
+      <td>{{totalAdmiPubCon[0].toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[1].toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[2].toFixed(2)}}</td>
+      <td>{{ (totalAdmiPubCon[1] + totalAdmiPubCon[2]).toFixed(2) }}</td>
+      <td>{{totalAdmiPubCon[3].toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[4].toFixed(2)}}</td>
+      <td>{{ (totalAdmiPubCon[3] + totalAdmiPubCon[4]).toFixed(2) }}</td>
+      <td>{{totalAdmiPubCon[5].toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[6].toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[7].toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[8].toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[9].toFixed(2)}}</td>
+      <td>{{ (totalAdmiPubCon[0] + totalAdmiPubCon[1] + totalAdmiPubCon[2] + totalAdmiPubCon[3] + totalAdmiPubCon[4] +
+        totalAdmiPubCon[5] + totalAdmiPubCon[6] + totalAdmiPubCon[7] + totalAdmiPubCon[8] +
+        totalAdmiPubCon[9]).toFixed(2) }}</td>
+      <td>{{totalAdmiPubCon[10].toFixed(2)}}</td>
+      <td>{{ (totalAdmiPubCon[11] * 30).toFixed(2)}}</td>
+      <td>{{totalAdmiPubCon[11].toFixed(2)}}</td>
+      <td>{{ (totalAdmiPubCon[10] + totalAdmiPubCon[11]).toFixed(2) }}</td>
+      <td>{{ (totalAdmiPubCon[0] + totalAdmiPubCon[1] + totalAdmiPubCon[2] + totalAdmiPubCon[3] + totalAdmiPubCon[4] +
+        totalAdmiPubCon[5] + totalAdmiPubCon[6] + totalAdmiPubCon[7] + totalAdmiPubCon[8] + totalAdmiPubCon[9] +
+        totalAdmiPubCon[10] + totalAdmiPubCon[11]).toFixed(2) }}</td>
+    </tr>
+    <tr *ngFor="let i of admiPubNoFinCon" id="texto">
+      <td>{{i.tipo_organismo}}</td>
+      <td>{{i.cantGeneral.toFixed(2)}}</td>
+      <td>{{i.cantPolicia.toFixed(2)}}</td>
+      <td>{{i.cantSerPen.toFixed(2)}}</td>
+      <td>{{ (i.cantPolicia + i.cantSerPen).toFixed(2) }}</td>
+      <td>{{i.cantMedicos.toFixed(2)}}</td>
+      <td>{{i.cantEnfermeria.toFixed(2)}}</td>
+      <td>{{ (i.cantMedicos + i.cantEnfermeria).toFixed(2) }}</td>
+      <td>{{i.cantJusticia.toFixed(2)}}</td>
+      <td>{{i.cantVial.toFixed(2)}}</td>
+      <td>{{i.cantSuperior.toFixed(2)}}</td>
+      <td>{{i.cantLegislativo.toFixed(2)}}</td>
+      <td>{{i.cantResto.toFixed(2)}}</td>
+      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto).toFixed(2) }}</td>
+      <td>{{i.cantDocCar.toFixed(2)}}</td>
+      <td>{{ (i.cantDocHor * 30).toFixed(2)}}</td>
+      <td>{{i.cantDocHor.toFixed(2)}}</td>
+      <td>{{ (i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
+      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
+    </tr>
+    <tr id="subtotal2">
+      <td> -Instituto, Empresas y otros Entes</td>
+      <td>{{totalInstEmpCon[0].toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[1].toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[2].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpCon[1] + totalInstEmpCon[2]).toFixed(2) }}</td>
+      <td>{{totalInstEmpCon[3].toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[4].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpCon[3] + totalInstEmpCon[4]).toFixed(2) }}</td>
+      <td>{{totalInstEmpCon[5].toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[6].toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[7].toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[8].toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[9].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpCon[0] + totalInstEmpCon[1] + totalInstEmpCon[2] + totalInstEmpCon[3] + totalInstEmpCon[4] +
+        totalInstEmpCon[5] + totalInstEmpCon[6] + totalInstEmpCon[7] + totalInstEmpCon[8] +
+        totalInstEmpCon[9]).toFixed(2) }}</td>
+      <td>{{totalInstEmpCon[10].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpCon[11] * 30).toFixed(2)}}</td>
+      <td>{{totalInstEmpCon[11].toFixed(2)}}</td>
+      <td>{{ (totalInstEmpCon[10] + totalInstEmpCon[11]).toFixed(2) }}</td>
+      <td>{{ (totalInstEmpCon[0] + totalInstEmpCon[1] + totalInstEmpCon[2] + totalInstEmpCon[3] + totalInstEmpCon[4] +
+        totalInstEmpCon[5] + totalInstEmpCon[6] + totalInstEmpCon[7] + totalInstEmpCon[8] + totalInstEmpCon[9] +
+        totalInstEmpCon[10] + totalInstEmpCon[11]).toFixed(2) }}</td>
+    </tr>
+    <tr *ngFor="let i of instEmpYOtrosCon" id="texto">
+      <td>{{i.tipo_organismo}}</td>
+      <td>{{i.cantGeneral.toFixed(2)}}</td>
+      <td>{{i.cantPolicia.toFixed(2)}}</td>
+      <td>{{i.cantSerPen.toFixed(2)}}</td>
+      <td>{{ (i.cantPolicia + i.cantSerPen).toFixed(2) }}</td>
+      <td>{{i.cantMedicos.toFixed(2)}}</td>
+      <td>{{i.cantEnfermeria.toFixed(2)}}</td>
+      <td>{{ (i.cantMedicos + i.cantEnfermeria).toFixed(2) }}</td>
+      <td>{{i.cantJusticia.toFixed(2)}}</td>
+      <td>{{i.cantVial.toFixed(2)}}</td>
+      <td>{{i.cantSuperior.toFixed(2)}}</td>
+      <td>{{i.cantLegislativo.toFixed(2)}}</td>
+      <td>{{i.cantResto.toFixed(2)}}</td>
+      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto).toFixed(2) }}</td>
+      <td>{{i.cantDocCar.toFixed(2)}}</td>
+      <td>{{ (i.cantDocHor * 30).toFixed(2)}}</td>
+      <td>{{i.cantDocHor.toFixed(2)}}</td>
+      <td>{{ (i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
+      <td>{{ (i.cantGeneral + i.cantPolicia + i.cantSerPen + i.cantMedicos + i.cantEnfermeria + i.cantJusticia +
+        i.cantVial + i.cantSuperior + i.cantLegislativo + i.cantResto + i.cantDocCar + i.cantDocHor).toFixed(2) }}</td>
+    </tr>
+    <tr>
+    <th colspan="19" id="filaVacia"></th>
+  </tr>
+
+    <!-- Totales de permanente, temporarios, suplentes y contratos-->
+    <tr id="subtotal1">
+      <td>TOTAL ADM.PUBLICA NO FINANC</td>
+      <td>{{(totalAdmiPubPer[0] + totalAdmiPubTem[0] + totalAdmiPubSup[0] + totalAdmiPubCon[0]).toFixed(2)}}</td>
+      <td>{{(totalAdmiPubPer[1] + totalAdmiPubTem[1] + totalAdmiPubSup[1] + totalAdmiPubCon[1]).toFixed(2)}}</td>
+      <td>{{(totalAdmiPubPer[2] + totalAdmiPubTem[2] + totalAdmiPubSup[2] + totalAdmiPubCon[2]).toFixed(2)}}</td>
+      <td>{{ ((totalAdmiPubPer[1] + totalAdmiPubTem[1] + totalAdmiPubSup[1] + totalAdmiPubCon[1]) + (totalAdmiPubPer[2]
+        + totalAdmiPubTem[2]
+        + totalAdmiPubSup[2] + totalAdmiPubCon[2])).toFixed(2) }}</td>
+      <td>{{(totalAdmiPubPer[3] + totalAdmiPubTem[3] + totalAdmiPubSup[3] + totalAdmiPubCon[3]).toFixed(2)}}</td>
+      <td>{{(totalAdmiPubPer[4] + totalAdmiPubTem[4] + totalAdmiPubSup[4] + totalAdmiPubCon[4]).toFixed(2)}}</td>
+      <td>{{ ((totalAdmiPubPer[3] + totalAdmiPubTem[3] + totalAdmiPubSup[3] + totalAdmiPubCon[3]) + (totalAdmiPubPer[4]
+        + totalAdmiPubTem[4]
+        + totalAdmiPubSup[4] + totalAdmiPubCon[4])).toFixed(2) }}</td>
+      <td>{{(totalAdmiPubPer[5] + totalAdmiPubTem[5] + totalAdmiPubSup[5] + totalAdmiPubCon[5]).toFixed(2)}}</td>
+      <td>{{(totalAdmiPubPer[6] + totalAdmiPubTem[6] + totalAdmiPubSup[6] + totalAdmiPubCon[6]).toFixed(2)}}</td>
+      <td>{{(totalAdmiPubPer[7] + totalAdmiPubTem[7] + totalAdmiPubSup[7] + totalAdmiPubCon[7]).toFixed(2)}}</td>
+      <td>{{(totalAdmiPubPer[8] + totalAdmiPubTem[8] + totalAdmiPubSup[8] + totalAdmiPubCon[8]).toFixed(2)}}</td>
+      <td>{{(totalAdmiPubPer[9] + totalAdmiPubTem[9] + totalAdmiPubSup[9] + totalAdmiPubCon[9]).toFixed(2)}}</td>
+      <td>{{ ((totalAdmiPubPer[0] + totalAdmiPubPer[1] + totalAdmiPubPer[2] + totalAdmiPubPer[3] + totalAdmiPubPer[4] +
+        totalAdmiPubPer[5] + totalAdmiPubPer[6] + totalAdmiPubPer[7] + totalAdmiPubPer[8] + totalAdmiPubPer[9]) +
+        (totalAdmiPubTem[0] + totalAdmiPubTem[1] + totalAdmiPubTem[2] + totalAdmiPubTem[3] + totalAdmiPubTem[4] +
+        totalAdmiPubTem[5] + totalAdmiPubTem[6] + totalAdmiPubTem[7] + totalAdmiPubTem[8] + totalAdmiPubTem[9]) +
+        (totalAdmiPubSup[0] + totalAdmiPubSup[1] + totalAdmiPubSup[2] + totalAdmiPubSup[3] + totalAdmiPubSup[4] +
+        totalAdmiPubSup[5] + totalAdmiPubSup[6] + totalAdmiPubSup[7] + totalAdmiPubSup[8] +
+        totalAdmiPubSup[9]) + (totalAdmiPubCon[0] + totalAdmiPubCon[1] + totalAdmiPubCon[2] + totalAdmiPubCon[3] +
+        totalAdmiPubCon[4] +
+        totalAdmiPubCon[5] + totalAdmiPubCon[6] + totalAdmiPubCon[7] + totalAdmiPubCon[8] +
+        totalAdmiPubCon[9])).toFixed(2) }}</td>
+      <td>{{(totalAdmiPubPer[10] + totalAdmiPubTem[10] + totalAdmiPubSup[10] + totalAdmiPubCon[10]).toFixed(2)}}</td>
+      <td>{{ ((totalAdmiPubPer[11] + totalAdmiPubTem[11] + totalAdmiPubSup[11] + totalAdmiPubCon[11]) * 30).toFixed(2)}}
+      </td>
+      <td>{{(totalAdmiPubPer[11] + totalAdmiPubTem[11] + totalAdmiPubSup[11] + totalAdmiPubCon[11]).toFixed(2)}}</td>
+      <td>{{ ((totalAdmiPubPer[10] + totalAdmiPubTem[10] + totalAdmiPubSup[10] + totalAdmiPubCon[10]) +
+        (totalAdmiPubPer[11] +
+        totalAdmiPubTem[11] + totalAdmiPubSup[11] + totalAdmiPubCon[11])).toFixed(2) }}</td>
+      <td>{{ ((totalAdmiPubPer[0] + totalAdmiPubPer[1] + totalAdmiPubPer[2] + totalAdmiPubPer[3] + totalAdmiPubPer[4] +
+        totalAdmiPubPer[5] + totalAdmiPubPer[6] + totalAdmiPubPer[7] + totalAdmiPubPer[8] + totalAdmiPubPer[9] +
+        totalAdmiPubPer[10] + totalAdmiPubPer[11]) + (totalAdmiPubTem[0] + totalAdmiPubTem[1] + totalAdmiPubTem[2] +
+        totalAdmiPubTem[3] + totalAdmiPubTem[4] + totalAdmiPubTem[5] + totalAdmiPubTem[6] + totalAdmiPubTem[7] +
+        totalAdmiPubTem[8] + totalAdmiPubTem[9] + totalAdmiPubTem[10] + totalAdmiPubTem[11]) + (totalAdmiPubSup[0] +
+        totalAdmiPubSup[1] + totalAdmiPubSup[2] + totalAdmiPubSup[3] + totalAdmiPubSup[4] + totalAdmiPubSup[5] +
+        totalAdmiPubSup[6] + totalAdmiPubSup[7] + totalAdmiPubSup[8] + totalAdmiPubSup[9] + totalAdmiPubSup[10] +
+        totalAdmiPubSup[11]) + (totalAdmiPubCon[0] + totalAdmiPubCon[1] + totalAdmiPubCon[2] + totalAdmiPubCon[3] +
+        totalAdmiPubCon[4] + totalAdmiPubCon[5] + totalAdmiPubCon[6] + totalAdmiPubCon[7] + totalAdmiPubCon[8] +
+        totalAdmiPubCon[9] + totalAdmiPubCon[10] + totalAdmiPubCon[11])).toFixed(2) }}</td>
+    </tr>
+
+    <tr>
+    <th colspan="19" id="filaVacia"></th>
+  </tr>
+
+    <tr id="subtotal1">
+      <td>TOTAL SECTOR PUBLICO NO FINANC</td>
+      <td>{{(total1Per[0] + total1Tem[0] + total1Sup[0] + total1Con[0]).toFixed(2)}}</td>
+      <td>{{(total1Per[1] + total1Tem[1] + total1Sup[1] + total1Con[1]).toFixed(2)}}</td>
+      <td>{{(total1Per[2] + total1Tem[2] + total1Sup[2] + total1Con[2]).toFixed(2)}}</td>
+      <td>{{ ((total1Per[1] + total1Tem[1] + total1Sup[1] + total1Con[1]) + (total1Per[2] + total1Tem[2]
+        + total1Sup[2] + total1Con[2])).toFixed(2) }}</td>
+      <td>{{(total1Per[3] + total1Tem[3] + total1Sup[3] + total1Con[3]).toFixed(2)}}</td>
+      <td>{{(total1Per[4] + total1Tem[4] + total1Sup[4] + total1Con[4]).toFixed(2)}}</td>
+      <td>{{ ((total1Per[3] + total1Tem[3] + total1Sup[3] + total1Con[3]) + (total1Per[4] + total1Tem[4]
+        + total1Sup[4] + total1Con[4])).toFixed(2) }}</td>
+      <td>{{(total1Per[5] + total1Tem[5] + total1Sup[5] + total1Con[5]).toFixed(2)}}</td>
+      <td>{{(total1Per[6] + total1Tem[6] + total1Sup[6] + total1Con[6]).toFixed(2)}}</td>
+      <td>{{(total1Per[7] + total1Tem[7] + total1Sup[7] + total1Con[7]).toFixed(2)}}</td>
+      <td>{{(total1Per[8] + total1Tem[8] + total1Sup[8] + total1Con[8]).toFixed(2)}}</td>
+      <td>{{(total1Per[9] + total1Tem[9] + total1Sup[9] + total1Con[9]).toFixed(2)}}</td>
+      <td>{{ ((total1Per[0] + total1Per[1] + total1Per[2] + total1Per[3] + total1Per[4] +
+        total1Per[5] + total1Per[6] + total1Per[7] + total1Per[8] + total1Per[9]) +
+        (total1Tem[0] + total1Tem[1] + total1Tem[2] + total1Tem[3] + total1Tem[4] +
+        total1Tem[5] + total1Tem[6] + total1Tem[7] + total1Tem[8] + total1Tem[9]) +
+        (total1Sup[0] + total1Sup[1] + total1Sup[2] + total1Sup[3] + total1Sup[4] +
+        total1Sup[5] + total1Sup[6] + total1Sup[7] + total1Sup[8] +
+        total1Sup[9]) +
+        (total1Con[0] + total1Con[1] + total1Con[2] + total1Con[3] + total1Con[4] +
+        total1Con[5] + total1Con[6] + total1Con[7] + total1Con[8] +
+        total1Con[9])).toFixed(2) }}</td>
+      <td>{{(total1Per[10] + total1Tem[10] + total1Sup[10] + total1Con[10]).toFixed(2)}}</td>
+      <td>{{ ((total1Per[11] + total1Tem[11] + total1Sup[11] + total1Con[11]) * 30).toFixed(2)}}</td>
+      <td>{{(total1Per[11] + total1Tem[11] + total1Sup[11] + total1Con[11]).toFixed(2)}}</td>
+      <td>{{ ((total1Per[10] + total1Tem[10] + total1Sup[10] + total1Con[10]) + (total1Per[11] +
+        total1Tem[11] + total1Sup[11] + total1Con[11])).toFixed(2) }}</td>
+      <td>{{ ((total1Per[0] + total1Per[1] + total1Per[2] + total1Per[3] + total1Per[4] +
+        total1Per[5] + total1Per[6] + total1Per[7] + total1Per[8] + total1Per[9] + total1Per[10] + total1Per[11]) +
+        (total1Tem[0] + total1Tem[1] + total1Tem[2] + total1Tem[3] + total1Tem[4] + total1Tem[5] + total1Tem[6] +
+        total1Tem[7] +
+        total1Tem[8] + total1Tem[9] + total1Tem[10] + total1Tem[11]) +
+        (total1Sup[0] + total1Sup[1] + total1Sup[2] + total1Sup[3] + total1Sup[4] + total1Sup[5] +
+        total1Sup[6] + total1Sup[7] + total1Sup[8] + total1Sup[9] + total1Sup[10] + total1Sup[11]) +
+        (total1Con[0] + total1Con[1] + total1Con[2] + total1Con[3] + total1Con[4] + total1Con[5] +
+        total1Con[6] + total1Con[7] + total1Con[8] + total1Con[9] + total1Con[10] + total1Con[11])).toFixed(2) }}</td>
     </tr>
   </tbody>
 

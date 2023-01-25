@@ -15,11 +15,14 @@ table{
 #texto{
   font-size: x-small;
 }
+#filaVacia{
+  height: 10px;
+}
 thead th, tfoot th, tfoot td {
   background: linear-gradient(to bottom, rgba(45, 150, 168, 0.1), rgba(45, 150, 168,0.5));
   border: 2px solid black;
 }
 thead th:nth-child(1) {
-  width: 20%;
+  width: 25%;
 }
 
