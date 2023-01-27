@@ -60,7 +60,9 @@ export class PlSerieDaComponent implements OnInit {
       }));
       
       console.log(result);
-      
+      console.log(filtroDA);
+
+           
       function getRandomColor() {
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
@@ -85,7 +87,8 @@ export class PlSerieDaComponent implements OnInit {
           data: item.data,
           backgroundColor: colors.get(item.label),
           borderColor: colors.get(item.label),
-          borderWidth: 1
+          borderWidth: 1,
+          stack: item.label
         };
       })
     
@@ -100,6 +103,14 @@ export class PlSerieDaComponent implements OnInit {
         title: {
           display: true,
           text: formData.descripcion
+        }
+      },
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true
         }
       }
     },
